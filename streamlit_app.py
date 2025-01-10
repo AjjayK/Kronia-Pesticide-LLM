@@ -13,17 +13,21 @@ from PIL import Image
 import io
 import base64
 from openai import OpenAI
-
+import logging
+import time
+from datetime import datetime
 pd.set_option("max_colwidth",None)
+logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 # Create Snowflake session
 connection_parameters = {
    "account": st.secrets["account"],
    "user": st.secrets["user"],
    "password": st.secrets["password"],
-   "database": "AJJAY_SANDBOX", 
-   "warehouse": "compute_wh",
-   "schema": "PUBLIC"            
+   "database": st.secrets["database"], 
+   "warehouse": st.secrets["warehouse"],
+   "schema": st.secrets["schema"]           
 }
 
 # create from a Snowflake Connection
@@ -34,12 +38,7 @@ connection_parameters = {
 def get_snowflake_session():
     return (
         Session.builder
-        .config("account", st.secrets["account"])
-        .config("user", st.secrets["user"])
-        .config("password", st.secrets["password"])
-        .config("database", "AJJAY_SANDBOX")
-        .config("warehouse", "compute_wh")
-        .config("schema", "PUBLIC")
+        .configs(connection_parameters)
         .create()
     )
 
@@ -54,9 +53,9 @@ NUM_CHUNKS = 10 # Num-chunks provided as context. Play with this to check how it
 slide_window = 7 # how many last conversations to remember. This is the slide window.
 
 # service parameters
-CORTEX_SEARCH_DATABASE = "AJJAY_SANDBOX"
-CORTEX_SEARCH_SCHEMA = "PUBLIC"
-CORTEX_SEARCH_SERVICE = "CC_SEARCH_SERVICE_CS"
+CORTEX_SEARCH_DATABASE = st.secrets["database"]
+CORTEX_SEARCH_SCHEMA = st.secrets["schema"]
+CORTEX_SEARCH_SERVICE = f"CC_SEARCH_SERVICE_CS_{connection_parameters['database']}"
 ######
 ######
 
@@ -75,12 +74,95 @@ COLUMNS = [
 svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
    
 ### Functions
+def show_settings():
+    # Initialize session states
+    if 'show_settings' not in st.session_state:
+        st.session_state.show_settings = False
+    if 'user_location' not in st.session_state:
+        user_id = st.session_state.get('user_id', 'default_user') 
+        load_sql = f"""
+        SELECT LOCATION 
+        FROM AJJAY_SANDBOX.APP_ASSETS.USER_SETTINGS 
+        WHERE USER_ID = '{user_id}'
+        """
+        result = session.sql(load_sql).collect()
+        if len(result) > 0:
+            st.session_state.user_location = result[0]['LOCATION']
+        else:
+            st.session_state.user_location = ""
+
+    if 'save_time' not in st.session_state:
+        st.session_state.save_time = None
+
+    # Toggle function for the settings visibility
+    def toggle_settings():
+        st.session_state.show_settings = not st.session_state.show_settings
+
+    # Create settings button in the sidebar
+    st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
+
+    # Auto-hide logic
+    if st.session_state.save_time:
+        if time.time() - st.session_state.save_time > 2:  # 2 seconds passed
+            st.session_state.show_settings = False
+            st.session_state.save_time = None
+
+    # Show settings when enabled
+    if st.session_state.show_settings:
+        with st.sidebar.expander("Settings", expanded=True):
+            # Location input
+            new_location = st.text_input(
+                "Your Location",
+                value=st.session_state.user_location,
+                key="location_input"
+            )
+            
+            # Save button
+            if st.button("Save Settings"):
+                st.session_state.user_location = new_location
+                st.session_state.save_time = time.time()  # Record save time
+
+
+                # Save to Snowflake
+                user_id = st.session_state.get('user_id', 'default_user')
+                try:
+                    upsert_sql = f"""
+                    MERGE INTO AJJAY_SANDBOX.APP_ASSETS.USER_SETTINGS AS target
+                    USING (SELECT '{user_id}' AS USER_ID, '{new_location}' AS LOCATION) AS source
+                    ON target.USER_ID = source.USER_ID
+                    WHEN MATCHED THEN
+                        UPDATE SET LOCATION = source.LOCATION, LAST_UPDATED = CURRENT_TIMESTAMP()
+                    WHEN NOT MATCHED THEN
+                        INSERT (USER_ID, LOCATION) VALUES (source.USER_ID, source.LOCATION)
+                    """
+                    session.sql(upsert_sql).collect()
+                    st.success("Settings saved!") 
+                except Exception as e:
+                    st.error(f"Error saving settings: {e}")    
+
+def image_workflow():
+    if st.session_state.uploaded_file is not None and st.session_state.image_analysis is None:
+        # Display the uploaded image
+        image = Image.open(st.session_state.uploaded_file)
+        st.sidebar.image(image, caption="Uploaded Image", use_column_width=True)
+        with st.spinner("Analyzing image..."):
+            # Get image bytes
+            img_bytes = st.session_state.uploaded_file.getvalue()
+            
+            # Get analysis
+            image_prompt = "You are an expert agronomist. Look into the picture and identify what the issue with the plant/crop is."
+            analysis = analyze_image(img_bytes, image_prompt)
+            
+            # Store results
+            st.session_state.image_analysis = analysis
+    if st.session_state.uploaded_file is None:
+        st.session_state.image_analysis = None
      
 def config_options():
 
     st.sidebar.title("Select Options")
 
-    categories = session.table('ALL_CATEGORICAL_DOCS_CHUNK_TABLE').select('PRODUCTNAME').distinct().collect()
+    categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().collect()
 
     cat_list = ['ALL']
     for cat in categories:
@@ -90,19 +172,19 @@ def config_options():
 
     uploaded_file = st.sidebar.file_uploader("Upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
     image_workflow()
-    st.sidebar.button("Start Over", on_click=init_messages)
+    st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
     st.sidebar.expander("Session State").write(st.session_state)
 
 def init_messages():
     
    # Initialize chat history
-    if "messages" not in st.session_state:
+    if st.session_state.start_over or "messages" not in st.session_state:
         st.session_state.messages = []
 
 def get_similar_chunks_search_service(query):
 
     #response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
-    
+
     if st.session_state.category_value == "ALL":
         response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
     else: 
@@ -252,31 +334,16 @@ def analyze_image(image_bytes, prompt):
     except Exception as e:
         return f"Error analyzing image: {str(e)}"
     
-def image_workflow():
-    if st.session_state.uploaded_file is not None and st.session_state.image_analysis is None:
-        # Display the uploaded image
-        image = Image.open(st.session_state.uploaded_file)
-        st.sidebar.image(image, caption="Uploaded Image", use_column_width=True)
-        with st.spinner("Analyzing image..."):
-            # Get image bytes
-            img_bytes = st.session_state.uploaded_file.getvalue()
-            
-            # Get analysis
-            image_prompt = "You are an expert agronomist. Look into the picture and identify what the issue with the plant/crop is."
-            analysis = analyze_image(img_bytes, image_prompt)
-            
-            # Store results
-            st.session_state.image_analysis = analysis
-    else:
-        st.session_state.image_analysis = None
+
 
 def main():
+
     
     st.title(f":speech_balloon: Chat with Pesticide Products Label Documents 🌾")
     st.session_state.model_name = 'mistral-large2'
+    show_settings()
     config_options()
     init_messages()
-
     # Display chat messages from history on app rerun
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
