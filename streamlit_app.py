@@ -19,6 +19,8 @@ from datetime import datetime
 pd.set_option("max_colwidth",None)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+#experimental
+from streamlit_extras.stylable_container import stylable_container
 
 # Create Snowflake session
 connection_parameters = {
@@ -72,6 +74,30 @@ COLUMNS = [
                       
 
 svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
+
+def search_locations(search_term = ''):
+    if not search_term:
+        # If no search term, return limited initial results
+        load_sql = """
+        SELECT LOCATION 
+        FROM DEV_DP_APP.MODELED.US_ADDRESS_LIST 
+        LIMIT 20
+        """
+    else:
+        # If there's a search term, filter locations that match
+        load_sql = f"""
+        SELECT LOCATION 
+        FROM DEV_DP_APP.MODELED.US_ADDRESS_LIST 
+        WHERE CONTAINS(LOWER(LOCATION), LOWER('{search_term}'))
+        LIMIT 20
+        """
+    
+    try:
+        result = session.sql(load_sql).to_pandas()
+        return result['LOCATION'].to_list()  # Add empty option at start
+    except Exception as e:
+        st.error(f"Error fetching locations: {str(e)}")
+        return [""]
    
 ### Functions
 def show_settings():
@@ -111,10 +137,13 @@ def show_settings():
     if st.session_state.show_settings:
         with st.sidebar.expander("Settings", expanded=True):
             # Location input
-            new_location = st.text_input(
-                "Your Location",
-                value=st.session_state.user_location,
-                key="location_input"
+            query = st.text_input("Type location to filter dropdown")
+            locations = search_locations(query)
+            new_location = st.selectbox(
+                "Choose your Location",
+                options = locations,
+                key="location_input",
+                placeholder="Select location from dropdown...",
             )
             
             # Save button
@@ -334,12 +363,85 @@ def analyze_image(image_bytes, prompt):
     except Exception as e:
         return f"Error analyzing image: {str(e)}"
     
+def create_structure():
+    st.markdown(
+        """
+        <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 8px;
+            text-align: center;
+            color: rgba(60, 60, 67, 0.7);
+            z-index: 999;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            backdrop-filter: blur(20px);  /* Increased blur for more frosted look */
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);  /* Lighter border for glass effect */
+            box-shadow: 0 -10px 15px rgba(255, 255, 255, 0.4);  /* Subtle glow */
+        }
 
+        @supports not (backdrop-filter: blur(20px)) {
+            .footer {
+                background: rgba(250, 250, 250, 0.95);  /* Fallback for browsers that don't support backdrop-filter */
+            }
+        }
 
+        .title-container {
+            text-align: left;
+            padding: 0;  /* Removed padding to move up */
+            margin: -3rem 0 2rem 1rem;  /* Negative top margin to move up, left margin for alignment */
+        }
+
+        .main {
+            margin-bottom: 45px;
+        }
+        
+        .main-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1E3C72;
+            margin-bottom: 0.1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.2rem;  /* Reduced from 1.5rem */
+            font-weight: 400;
+            color: #4A4A4A;
+            margin-top: 0;
+            letter-spacing: -0.2px;
+            line-height: 1.4;  /* Added for better readability */
+        }
+
+        .footer {
+            animation: fadeInUp 0.3s ease-out;
+        }
+        </style>
+
+        
+        <div class="title-container">
+            <h1 class="main-title">🌾 Kronia</h1>
+            <h4 class="subtitle">💬 Chat with Pesticide Products Label Documents</h4>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <span>Kronia can make mistakes. Please double check.</span>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 def main():
 
-    
-    st.title(f":speech_balloon: Chat with Pesticide Products Label Documents 🌾")
+    create_structure()
     st.session_state.model_name = 'mistral-large2'
     show_settings()
     config_options()
