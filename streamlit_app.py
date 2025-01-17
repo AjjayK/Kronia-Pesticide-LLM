@@ -19,8 +19,7 @@ from datetime import datetime
 pd.set_option("max_colwidth",None)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-#experimental
-from streamlit_extras.stylable_container import stylable_container
+
 
 
 #set up page
