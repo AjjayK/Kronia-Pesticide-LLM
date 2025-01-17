@@ -22,6 +22,10 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 #experimental
 from streamlit_extras.stylable_container import stylable_container
 
+
+#set up page
+st.set_page_config(page_title="Kronia", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
+
 # Create Snowflake session
 connection_parameters = {
    "account": st.secrets["account"],
@@ -31,6 +35,10 @@ connection_parameters = {
    "warehouse": st.secrets["warehouse"],
    "schema": st.secrets["schema"]           
 }
+
+db_env = st.secrets["environment"]
+ingest_db = f"{db_env}_src_ingest"
+app_db = f"{db_env}_dp_app"
 
 # create from a Snowflake Connection
 #connection = connect(**connection_parameters)
@@ -78,16 +86,16 @@ svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].corte
 def search_locations(search_term = ''):
     if not search_term:
         # If no search term, return limited initial results
-        load_sql = """
+        load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE 
-        FROM DEV_DP_APP.MODELED.US_ADDRESS_LIST 
+        FROM {app_db}.MODELED.US_ADDRESS_LIST 
         LIMIT 20
         """
     else:
         # If there's a search term, filter locations that match
         load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE 
-        FROM DEV_DP_APP.MODELED.US_ADDRESS_LIST 
+        FROM {app_db}.MODELED.US_ADDRESS_LIST 
         WHERE CONTAINS(LOWER(LOCATION), LOWER('{search_term}'))
         LIMIT 20
         """
@@ -109,7 +117,7 @@ def show_settings():
         user_id = st.session_state.get('user_id', 'default_user') 
         load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE
-        FROM AJJAY_SANDBOX.APP_ASSETS.USER_SETTINGS 
+        FROM {app_db}.APP_ASSETS.USER_SETTINGS 
         WHERE USER_ID = '{user_id}'
         """
         result = session.sql(load_sql).collect()
@@ -164,7 +172,7 @@ def show_settings():
                 user_id = st.session_state.get('user_id', 'default_user')
                 try:
                     upsert_sql = f"""
-                    MERGE INTO AJJAY_SANDBOX.APP_ASSETS.USER_SETTINGS AS target
+                    MERGE INTO {app_db}.APP_ASSETS.USER_SETTINGS AS target
                     USING (SELECT '{user_id}' AS USER_ID, '{new_location}' AS LOCATION, '{latitude}' AS LATITUDE, '{longitude}' AS LONGITUDE) AS source
                     ON target.USER_ID = source.USER_ID
                     WHEN MATCHED THEN
@@ -262,14 +270,14 @@ def summarize_question_with_history(chat_history, question):
         </question>
         """
     
-    sumary = Complete(st.session_state.model_name, prompt)   
+    summary = Complete(st.session_state.model_name, prompt)   
 
     st.sidebar.text("Summary to be used to find similar chunks in the docs:")
-    st.sidebar.caption(sumary)
+    st.sidebar.caption(summary)
 
-    sumary = sumary.replace("'", "")
+    summary = summary.replace("'", "")
 
-    return sumary
+    return summary
 
 def create_prompt (myquestion):
     image_analysis = st.session_state.image_analysis
@@ -570,7 +578,7 @@ def create_structure():
     )
 
 def main():
-    st.set_page_config(page_title="Kronia", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
+
     create_structure()
     st.session_state.model_name = 'mistral-large2'
     show_settings()
@@ -603,7 +611,7 @@ def main():
                 if relative_paths != "None":
                     st.markdown("Related Documents")
                     for path in relative_paths:
-                        cmd2 = f"select GET_PRESIGNED_URL(@DEV_SRC_INGEST.EPA_RAW.PDF_STORE, '{path}', 360) as URL_LINK from directory(@DEV_SRC_INGEST.EPA_RAW.PDF_STORE)"
+                        cmd2 = f"select GET_PRESIGNED_URL(@{ingest_db}.EPA_RAW.PDF_STORE, '{path}', 360) as URL_LINK from directory(@{ingest_db}.EPA_RAW.PDF_STORE)"
                         df_url_link = session.sql(cmd2).to_pandas()
                         url_link = df_url_link._get_value(0,'URL_LINK')
             
