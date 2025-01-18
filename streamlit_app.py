@@ -88,15 +88,15 @@ def search_locations(search_term = ''):
         load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE 
         FROM {app_db}.MODELED.US_ADDRESS_LIST 
-        LIMIT 20
+        LIMIT 200
         """
     else:
         # If there's a search term, filter locations that match
         load_sql = f"""
-        SELECT LOCATION, LATITUDE, LONGITUDE 
+        SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE 
         FROM {app_db}.MODELED.US_ADDRESS_LIST 
         WHERE CONTAINS(LOWER(LOCATION), LOWER('{search_term}'))
-        LIMIT 20
+        LIMIT 200
         """
     
     try:
@@ -207,7 +207,7 @@ def config_options():
 
     st.sidebar.title("Select Options")
 
-    categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().collect()
+    categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()
 
     cat_list = ['ALL']
     for cat in categories:
@@ -312,7 +312,7 @@ def create_prompt (myquestion):
            provided between <chat_history> and </chat_history> tags..
            When answering the question contained between <question> and </question> tags
            be a bit detailed and please DO NOT HALLUCINATE. 
-           If you don´t have the information just say so.
+           If you don´t have the information, say you do not have enough information to answer.
            
            Do not mention the CONTEXT used in your answer.
            Do not mention the CHAT HISTORY used in your answer.
@@ -390,7 +390,7 @@ def analyze_image(image_bytes, prompt):
         return response.choices[0].message.content
     except Exception as e:
         return f"Error analyzing image: {str(e)}"
-    
+        
 def get_weather_forecast(include_categories):
     open_weather_api_key = st.secrets["open_weather_api_key"]
 
@@ -601,7 +601,7 @@ def main():
     
             question = question.replace("'","")
     
-            with st.spinner(f"{st.session_state.model_name} thinking..."):
+            with st.spinner(f"Kronia thinking..."):
                 need_weather(question)
                 response, relative_paths = answer_question(question)            
                 response = response.replace("'", "")
