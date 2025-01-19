@@ -6,7 +6,7 @@ from snowflake.core import Root
 import requests
 from snowflake.cortex import Complete
 from snowflake.core import Root
-
+from dropdown import get_product_list
 import pandas as pd
 import json
 from PIL import Image
@@ -134,7 +134,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
-    st.sidebar.header("Enter your Location")
+    st.sidebar.title("Enter your Location")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
@@ -206,16 +206,20 @@ def image_workflow():
 def config_options():
 
     st.sidebar.title("Select Options")
+    filtered_product_db = get_product_list(session, app_db)
 
-    categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()
-
-    cat_list = ['ALL']
-    for cat in categories:
-        cat_list.append(cat.PRODUCTNAME)
+    if isinstance(filtered_product_db, str) and filtered_product_db == "ALL":
+        st.session_state.product_list = "ALL"
+        st.session_state.pest = "ALL"
+        st.session_state.site = "ALL"
+    else:
+        st.session_state.product_list = filtered_product_db['PRODUCTNAME'].unique().tolist()
+        st.session_state.pest = filtered_product_db['PEST'].unique().tolist()
+        st.session_state.site = filtered_product_db['SITE'].unique().tolist()
             
-    st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
+    #st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
 
-    uploaded_file = st.sidebar.file_uploader("Upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
+    uploaded_file = st.sidebar.file_uploader("Or upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
     image_workflow()
     st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
     st.sidebar.expander("Session State").write(st.session_state)
@@ -230,11 +234,19 @@ def get_similar_chunks_search_service(query):
 
     #response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
 
-    if st.session_state.category_value == "ALL":
+    if st.session_state.product_list == "ALL":
         response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
     else: 
-        st.write(st.session_state.category_value)
-        filter_obj = {"@eq": {"PRODUCTNAME": st.session_state.category_value} }
+        eq_conditions = [
+            {"@eq": {"PRODUCTNAME": product}}
+            for product in st.session_state.product_list
+        ]
+        if len(eq_conditions) == 1:
+            filter_obj = {"@eq": {"PRODUCTNAME": st.session_state.product_list[0]}}
+        else:
+            filter_obj = {"@or": eq_conditions}
+            print(eq_conditions)
+        #filter_obj = {"@contains": {"PRODUCTNAME": st.session_state.product_list }}
         response = svc.search(query, COLUMNS, filter=filter_obj, limit=NUM_CHUNKS)
 
     st.sidebar.json(response.json())
@@ -256,18 +268,34 @@ def summarize_question_with_history(chat_history, question):
 # To get the right context, use the LLM to first summarize the previous conversation
 # This will be used to get embeddings and find similar chunks in the docs for context
 
-    prompt = f"""
-        Based on the chat history below and the question, generate a query that extend the question
-        with the chat history provided. The query should be in natural language. 
-        Answer with only the query. Do not add any explanation.
-        
-        <chat_history>
-        {chat_history}
-        </chat_history>
-        <question>
-        {question}
-        </question>
-        """
+    base_prompt = f"""
+    Based on the chat history below and the question, generate a query that extends the question
+    with the chat history provided. The query should be in natural language.
+    Answer with only the query. Do not add any explanation.
+
+    <chat_history>
+    {chat_history}
+    </chat_history>
+
+    <question>
+    {question}
+    </question>
+    """
+
+    if st.session_state.product_list == "ALL":      
+        prompt = base_prompt
+    else:
+        extra_details = f"""
+            <pest_in_scope>
+            {st.session_state.pest}
+            </pest_in_scope>
+
+            <site_in_scope>
+            {st.session_state.site}
+            </site_in_scope>
+            """
+
+        prompt = f"{extra_details}{base_prompt}"
     
     summary = Complete(st.session_state.model_name, prompt)   
 
@@ -293,7 +321,7 @@ def create_prompt (myquestion):
     else:
         prompt_context = get_similar_chunks_search_service(question_with_image) #First question when using history
   
-    prompt = f"""
+    base_answer_prompt = f"""
            You are an agronomist who can advise on pesticides. 
            
            When the question is general about a product, you advice on topics such as pesticide's labeling and usage. You can speak about the active ingredient, 
@@ -334,9 +362,23 @@ def create_prompt (myquestion):
            <question>  
            {myquestion}
            </question>
-           Answer: 
            """
+    answer = "Answer:"
+    if st.session_state.product_list == "ALL":
+        prompt = f"{base_answer_prompt} {answer}"
+    else:
+        extra_details = f"""
+            <pest_in_scope>
+            {st.session_state.pest}
+            </pest_in_scope>
 
+            <site_in_scope>
+            {st.session_state.site}
+            </site_in_scope>
+            """
+
+        prompt = f"{extra_details}{base_answer_prompt} {answer}"
+    
     json_data = json.loads(prompt_context)
 
     relative_paths = set(item['relative_path'] for item in json_data['results'])
