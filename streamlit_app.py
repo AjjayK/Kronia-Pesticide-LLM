@@ -6,7 +6,7 @@ from snowflake.core import Root
 import requests
 from snowflake.cortex import Complete
 from snowflake.core import Root
-
+from dropdown import get_product_list
 import pandas as pd
 import json
 from PIL import Image
@@ -25,6 +25,12 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 #set up page
 st.set_page_config(page_title="Kronia", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
+
+
+db_env = st.secrets["environment"]
+ingest_db = f"{db_env}_SRC_INGEST"
+app_db = f"{db_env}_DP_APP"
+
 # Create Snowflake session
 connection_parameters = {
    "account": st.secrets["account"],
@@ -35,21 +41,14 @@ connection_parameters = {
    "schema": st.secrets["schema"]           
 }
 
-db_env = st.secrets["environment"]
-ingest_db = f"{db_env}_src_ingest"
-app_db = f"{db_env}_dp_app"
-
-# create from a Snowflake Connection
-#connection = connect(**connection_parameters)
-#root = Root(connection)
-# or create from a Snowpark Session
 @st.cache_resource
 def get_snowflake_session():
-    return (
-        Session.builder
-        .configs(connection_parameters)
-        .create()
-    )
+    # return (
+    #     Session.builder
+    #     .configs(connection_parameters)
+    #     .create()
+    # )
+    return st.connection("snowflake").session()
 
 # Get the session only once and reuse it
 session = get_snowflake_session()
@@ -86,23 +85,23 @@ def search_locations(search_term = ''):
     if not search_term:
         # If no search term, return limited initial results
         load_sql = f"""
-        SELECT LOCATION, LATITUDE, LONGITUDE 
+        SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE 
         FROM {app_db}.MODELED.US_ADDRESS_LIST 
-        LIMIT 20
+        LIMIT 200
         """
     else:
         # If there's a search term, filter locations that match
         load_sql = f"""
-        SELECT LOCATION, LATITUDE, LONGITUDE 
+        SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE 
         FROM {app_db}.MODELED.US_ADDRESS_LIST 
         WHERE CONTAINS(LOWER(LOCATION), LOWER('{search_term}'))
-        LIMIT 20
+        LIMIT 200
         """
     
     try:
         result = session.sql(load_sql).to_pandas()
-        location_list = result['LOCATION'].to_list()
-        return result['LOCATION'].to_list(), result  # Add empty option at start
+        location_list = list(set(result['LOCATION'].to_list()))
+        return location_list, result  # Add empty option at start
     except Exception as e:
         st.error(f"Error fetching locations: {str(e)}")
         return [""]
@@ -135,6 +134,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
+    st.sidebar.title("Enter your Location")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
@@ -206,16 +206,20 @@ def image_workflow():
 def config_options():
 
     st.sidebar.title("Select Options")
+    filtered_product_db = get_product_list(session, app_db)
 
-    categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().collect()
-
-    cat_list = ['ALL']
-    for cat in categories:
-        cat_list.append(cat.PRODUCTNAME)
+    if isinstance(filtered_product_db, str) and filtered_product_db == "ALL":
+        st.session_state.product_list = "ALL"
+        st.session_state.pest = "ALL"
+        st.session_state.site = "ALL"
+    else:
+        st.session_state.product_list = filtered_product_db['PRODUCTNAME'].unique().tolist()
+        st.session_state.pest = filtered_product_db['PEST'].unique().tolist()
+        st.session_state.site = filtered_product_db['SITE'].unique().tolist()
             
-    st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
+    #st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
 
-    uploaded_file = st.sidebar.file_uploader("Upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
+    uploaded_file = st.sidebar.file_uploader("Or upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
     image_workflow()
     st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
     st.sidebar.expander("Session State").write(st.session_state)
@@ -230,11 +234,19 @@ def get_similar_chunks_search_service(query):
 
     #response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
 
-    if st.session_state.category_value == "ALL":
+    if st.session_state.product_list == "ALL":
         response = svc.search(query, COLUMNS, limit=NUM_CHUNKS)
     else: 
-        st.write(st.session_state.category_value)
-        filter_obj = {"@eq": {"PRODUCTNAME": st.session_state.category_value} }
+        eq_conditions = [
+            {"@eq": {"PRODUCTNAME": product}}
+            for product in st.session_state.product_list
+        ]
+        if len(eq_conditions) == 1:
+            filter_obj = {"@eq": {"PRODUCTNAME": st.session_state.product_list[0]}}
+        else:
+            filter_obj = {"@or": eq_conditions}
+            print(eq_conditions)
+        #filter_obj = {"@contains": {"PRODUCTNAME": st.session_state.product_list }}
         response = svc.search(query, COLUMNS, filter=filter_obj, limit=NUM_CHUNKS)
 
     st.sidebar.json(response.json())
@@ -256,18 +268,34 @@ def summarize_question_with_history(chat_history, question):
 # To get the right context, use the LLM to first summarize the previous conversation
 # This will be used to get embeddings and find similar chunks in the docs for context
 
-    prompt = f"""
-        Based on the chat history below and the question, generate a query that extend the question
-        with the chat history provided. The query should be in natural language. 
-        Answer with only the query. Do not add any explanation.
-        
-        <chat_history>
-        {chat_history}
-        </chat_history>
-        <question>
-        {question}
-        </question>
-        """
+    base_prompt = f"""
+    Based on the chat history below and the question, generate a query that extends the question
+    with the chat history provided. The query should be in natural language.
+    Answer with only the query. Do not add any explanation.
+
+    <chat_history>
+    {chat_history}
+    </chat_history>
+
+    <question>
+    {question}
+    </question>
+    """
+
+    if st.session_state.product_list == "ALL":      
+        prompt = base_prompt
+    else:
+        extra_details = f"""
+            <pest_in_scope>
+            {st.session_state.pest}
+            </pest_in_scope>
+
+            <site_in_scope>
+            {st.session_state.site}
+            </site_in_scope>
+            """
+
+        prompt = f"{extra_details}{base_prompt}"
     
     summary = Complete(st.session_state.model_name, prompt)   
 
@@ -293,7 +321,7 @@ def create_prompt (myquestion):
     else:
         prompt_context = get_similar_chunks_search_service(question_with_image) #First question when using history
   
-    prompt = f"""
+    base_answer_prompt = f"""
            You are an agronomist who can advise on pesticides. 
            
            When the question is general about a product, you advice on topics such as pesticide's labeling and usage. You can speak about the active ingredient, 
@@ -305,14 +333,14 @@ def create_prompt (myquestion):
            You can utilize the information contained from the IMAGE ANALYSIS provided
            between <image_analysis> and </image_analysis> tags.
 
-            You can utilize the weather information contained within
+            You can utilize the weather information contained for location ({st.session_state.user_location}) within
            between <weather_forecast> and </weather_forecast> tags if needed. The weather information is in imperial units.
 
            You offer a chat experience considering the information included in the CHAT HISTORY
            provided between <chat_history> and </chat_history> tags..
            When answering the question contained between <question> and </question> tags
            be a bit detailed and please DO NOT HALLUCINATE. 
-           If you don´t have the information just say so.
+           If you don´t have the information, say you do not have enough information to answer.
            
            Do not mention the CONTEXT used in your answer.
            Do not mention the CHAT HISTORY used in your answer.
@@ -334,9 +362,23 @@ def create_prompt (myquestion):
            <question>  
            {myquestion}
            </question>
-           Answer: 
            """
+    answer = "Answer:"
+    if st.session_state.product_list == "ALL":
+        prompt = f"{base_answer_prompt} {answer}"
+    else:
+        extra_details = f"""
+            <pest_in_scope>
+            {st.session_state.pest}
+            </pest_in_scope>
 
+            <site_in_scope>
+            {st.session_state.site}
+            </site_in_scope>
+            """
+
+        prompt = f"{extra_details}{base_answer_prompt} {answer}"
+    
     json_data = json.loads(prompt_context)
 
     relative_paths = set(item['relative_path'] for item in json_data['results'])
@@ -390,7 +432,7 @@ def analyze_image(image_bytes, prompt):
         return response.choices[0].message.content
     except Exception as e:
         return f"Error analyzing image: {str(e)}"
-    
+
 def get_weather_forecast(include_categories):
     open_weather_api_key = st.secrets["open_weather_api_key"]
 
@@ -458,7 +500,7 @@ def need_weather(myquestion):
     with st.spinner('Checking if need weather...'):
         need_weather = Complete(st.session_state.model_name, need_weather_system_prompt)
     
-    print(need_weather)
+
 
     if need_weather.strip() == "Yes":
         labels = """
@@ -495,9 +537,7 @@ def need_weather(myquestion):
 
         with st.spinner('Getting weather categories...'):
             include_categories = Complete(st.session_state.model_name, weather_category_system_prompt)
-        print(include_categories)
         st.session_state.weather_forecast = get_weather_forecast(include_categories)
-        print(st.session_state.weather_forecast)
 
 def create_structure():
     st.markdown(
@@ -601,7 +641,7 @@ def main():
     
             question = question.replace("'","")
     
-            with st.spinner(f"{st.session_state.model_name} thinking..."):
+            with st.spinner(f"Kronia thinking..."):
                 need_weather(question)
                 response, relative_paths = answer_question(question)            
                 response = response.replace("'", "")
