@@ -14098,3 +14098,1696 @@ ModuleNotFoundError: No module named 'opentelemetry'
 2025-01-18 18:59:57,908 - DEBUG - clear_cache() called
 2025-01-18 18:59:57,909 - DEBUG - Session is closed
 2025-01-18 18:59:57,909 - INFO - Closed session: 1980125954386766
+2025-01-18 19:07:59,251 - DEBUG - reading configuration file from C:\Users\ajjay\AppData\Local\snowflake\config.toml
+2025-01-18 19:07:59,252 - INFO - Snowflake Connector for Python Version: 3.12.4, Python Version: 3.10.11, Platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:07:59,252 - DEBUG - connect
+2025-01-18 19:07:59,252 - DEBUG - __config
+2025-01-18 19:07:59,252 - INFO - Connecting to GLOBAL Snowflake domain
+2025-01-18 19:07:59,253 - INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+2025-01-18 19:07:59,253 - DEBUG - use_numpy: False
+2025-01-18 19:07:59,253 - DEBUG - initialized
+2025-01-18 19:07:59,253 - DEBUG - REST API object was created: gmcpdcz-mt01740.snowflakecomputing.com:443
+2025-01-18 19:07:59,341 - DEBUG - Public key fingerprint is SHA256:MMhnSja/3AZz/s91ePEYdo5p27RfYwIdt7+BsyWAYGg=
+2025-01-18 19:07:59,343 - DEBUG - authenticate
+2025-01-18 19:07:59,343 - DEBUG - account=gmcpdcz-mt01740, user=preciousjunk, database=DEV_SRC_INGEST, schema=EPA_PROCESSED, warehouse=app_wh, role=app_role, request_id=3bec707f-a0da-466b-94c7-3fe1d248caa2
+2025-01-18 19:07:59,343 - DEBUG - body['data']: {'CLIENT_APP_ID': 'PythonConnector', 'CLIENT_APP_VERSION': '3.12.4', 'SVN_REVISION': None, 'ACCOUNT_NAME': 'gmcpdcz-mt01740', 'LOGIN_NAME': 'preciousjunk', 'CLIENT_ENVIRONMENT': {'APPLICATION': 'streamlit', 'OS': 'Windows', 'OS_VERSION': 'Windows-10-10.0.22635-SP0', 'PYTHON_VERSION': '3.10.11', 'PYTHON_RUNTIME': 'CPython', 'PYTHON_COMPILER': 'MSC v.1929 64 bit (AMD64)', 'OCSP_MODE': 'FAIL_OPEN', 'TRACING': 10, 'LOGIN_TIMEOUT': None, 'NETWORK_TIMEOUT': None, 'SOCKET_TIMEOUT': None}, 'AUTHENTICATOR': 'SNOWFLAKE_JWT', 'TOKEN': '******', 'SESSION_PARAMETERS': {'CLIENT_PREFETCH_THREADS': 4}}
+2025-01-18 19:07:59,343 - DEBUG - Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2025-01-18 19:07:59,343 - DEBUG - Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2025-01-18 19:07:59,343 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:07:59,343 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:07:59,344 - DEBUG - Request guid: 3d67d519-caf6-4f65-b26d-df87a42d266d
+2025-01-18 19:07:59,344 - DEBUG - socket timeout: 10
+2025-01-18 19:07:59,346 - DEBUG - Starting new HTTPS connection (1): gmcpdcz-mt01740.snowflakecomputing.com:443
+2025-01-18 19:07:59,795 - DEBUG - OCSP Mode: FAIL_OPEN, OCSP response cache file name: None
+2025-01-18 19:07:59,825 - DEBUG - cache directory: C:\Users\ajjay\AppData\Local\Snowflake\Caches
+2025-01-18 19:07:59,826 - DEBUG - ocsp_response_cache_uri: file://C:/Users/ajjay/AppData/Local/Snowflake/Caches/ocsp_response_cache.json
+2025-01-18 19:07:59,826 - DEBUG - OCSP_VALIDATION_CACHE size: 310
+2025-01-18 19:07:59,826 - DEBUG - OCSP response cache server is enabled: http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+2025-01-18 19:07:59,826 - DEBUG - OCSP dynamic cache server RETRY URL: None
+2025-01-18 19:07:59,826 - DEBUG - validating certificate: gmcpdcz-mt01740.snowflakecomputing.com
+2025-01-18 19:07:59,826 - DEBUG - # of certificates: 4
+2025-01-18 19:07:59,826 - DEBUG - subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:07:59,827 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:07:59,827 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')]), issuer: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:07:59,828 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:07:59,830 - DEBUG - reading certificate bundle: D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\certifi\cacert.pem
+2025-01-18 19:07:59,842 - DEBUG - not found issuer_der: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:07:59,843 - DEBUG - hit cache for subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')])
+2025-01-18 19:07:59,845 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:07:59,846 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:07:59,847 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:07:59,847 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:07:59,848 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2025-05-07 12:00:00+00:00
+2025-01-18 19:07:59,849 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:07:59,851 - DEBUG - ok
+2025-01-18 19:08:00,001 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /session/v1/login-request?request_id=3bec707f-a0da-466b-94c7-3fe1d248caa2&databaseName=DEV_SRC_INGEST&schemaName=EPA_PROCESSED&warehouse=app_wh&roleName=app_role&request_guid=3d67d519-caf6-4f65-b26d-df87a42d266d HTTP/1.1" 200 1781
+2025-01-18 19:08:00,001 - DEBUG - SUCCESS
+2025-01-18 19:08:00,001 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,002 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,002 - DEBUG - completed authentication
+2025-01-18 19:08:00,002 - DEBUG - token = ******
+2025-01-18 19:08:00,002 - DEBUG - master_token = ******
+2025-01-18 19:08:00,002 - DEBUG - id_token = NULL
+2025-01-18 19:08:00,002 - DEBUG - mfa_token = NULL
+2025-01-18 19:08:00,004 - DEBUG - cursor
+2025-01-18 19:08:00,004 - INFO - Snowpark Session information: 
+"version" : 1.26.0,
+"python.version" : 3.10.11,
+"python.connector.version" : 3.12.4,
+"python.connector.session.id" : 1980125954395262,
+"os.name" : Windows
+
+2025-01-18 19:08:00,005 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:08:00,005 - DEBUG - created a new SFPoolManager
+2025-01-18 19:08:00,006 - INFO - Querying the server for client info
+2025-01-18 19:08:00,006 - DEBUG - cursor
+2025-01-18 19:08:00,006 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,007 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:08:00,007 - DEBUG - sequence counter: 1
+2025-01-18 19:08:00,007 - DEBUG - Request id: 53b136ee-6d97-4d52-82cf-cdbff79ccd19
+2025-01-18 19:08:00,007 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:08:00,007 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,007 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,007 - DEBUG - _cmd_query
+2025-01-18 19:08:00,007 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,007 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[1], is_file_transfer=[False]
+2025-01-18 19:08:00,008 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,008 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,008 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,009 - DEBUG - Request guid: 9186c946-a7f8-45d3-8cfc-e154a529cc39
+2025-01-18 19:08:00,009 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,221 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=53b136ee-6d97-4d52-82cf-cdbff79ccd19&request_guid=9186c946-a7f8-45d3-8cfc-e154a529cc39 HTTP/1.1" 200 2620
+2025-01-18 19:08:00,222 - DEBUG - SUCCESS
+2025-01-18 19:08:00,222 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,222 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,222 - DEBUG - Query id: 01b9ce23-0002-4d87-0007-08ea001fe7f6
+2025-01-18 19:08:00,222 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248875609079, 'priority': 0, 'context': 'CJ7sJA=='}]}
+2025-01-18 19:08:00,222 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248875609079, 'priority': 0, 'context': 'CJ7sJA=='}
+2025-01-18 19:08:00,222 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,222 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,222 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,222 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,222 - DEBUG - Cache Entry: (0, 1737248875609079, 0)
+2025-01-18 19:08:00,222 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,222 - DEBUG - sfqid: 01b9ce23-0002-4d87-0007-08ea001fe7f6
+2025-01-18 19:08:00,222 - DEBUG - query execution done
+2025-01-18 19:08:00,222 - DEBUG - SUCCESS
+2025-01-18 19:08:00,222 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,223 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,223 - INFO - Number of results in first chunk: 1
+2025-01-18 19:08:00,223 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:08:00,223 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:08:00,224 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:08:00,224 - DEBUG - Batches read: 0
+2025-01-18 19:08:00,225 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:08:00,225 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:08:00,226 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:08:00,227 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:08:00,227 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:08:00,228 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:08:00,228 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:08:00,242 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,242 - DEBUG - query: [SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...]
+2025-01-18 19:08:00,242 - DEBUG - sequence counter: 2
+2025-01-18 19:08:00,242 - DEBUG - Request id: bbbaa782-e53f-4253-8e4a-2bd4f691c477
+2025-01-18 19:08:00,242 - DEBUG - running query [SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...]
+2025-01-18 19:08:00,242 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,242 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,242 - DEBUG - _cmd_query
+2025-01-18 19:08:00,243 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,243 - DEBUG - Cache Entry: (0, 1737248875609079, 0)
+2025-01-18 19:08:00,243 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248875609079, 'priority': 0, 'context': {'base64Data': 'CJ7sJA=='}}]}
+2025-01-18 19:08:00,243 - DEBUG - sql=[SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...], sequence_id=[2], is_file_transfer=[False]
+2025-01-18 19:08:00,244 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,245 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,245 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,245 - DEBUG - Request guid: 33ed00ed-c6b1-4a14-adf9-dc9967ca15d8
+2025-01-18 19:08:00,245 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,332 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=bbbaa782-e53f-4253-8e4a-2bd4f691c477&request_guid=33ed00ed-c6b1-4a14-adf9-dc9967ca15d8 HTTP/1.1" 200 2114
+2025-01-18 19:08:00,333 - DEBUG - SUCCESS
+2025-01-18 19:08:00,333 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,333 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,333 - DEBUG - Query id: 01b9ce23-0002-4d87-0007-08ea001fe7fa
+2025-01-18 19:08:00,333 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248875719991, 'priority': 0, 'context': 'CJ7sJA=='}]}
+2025-01-18 19:08:00,333 - DEBUG - Cache Entry: (0, 1737248875609079, 0)
+2025-01-18 19:08:00,333 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248875719991, 'priority': 0, 'context': 'CJ7sJA=='}
+2025-01-18 19:08:00,333 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,333 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,333 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,333 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,333 - DEBUG - Cache Entry: (0, 1737248875719991, 0)
+2025-01-18 19:08:00,333 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,333 - DEBUG - sfqid: 01b9ce23-0002-4d87-0007-08ea001fe7fa
+2025-01-18 19:08:00,333 - DEBUG - query execution done
+2025-01-18 19:08:00,333 - DEBUG - SUCCESS
+2025-01-18 19:08:00,333 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,333 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,333 - INFO - Number of results in first chunk: 1
+2025-01-18 19:08:00,333 - DEBUG - Execute query [queryID: 01b9ce23-0002-4d87-0007-08ea001fe7fa] 
+        SELECT LOCATION, LATITUDE, LONGITUDE
+        FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS 
+        WHERE USER_ID = 'default_user'
+        
+2025-01-18 19:08:00,334 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:08:00,334 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:08:00,334 - DEBUG - Arrow chunk info: batchCount 1, columnCount 3, use_numpy: 0
+2025-01-18 19:08:00,334 - DEBUG - Batches read: 0
+2025-01-18 19:08:00,334 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:08:00,334 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:08:00,343 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,343 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:08:00,343 - DEBUG - sequence counter: 3
+2025-01-18 19:08:00,343 - DEBUG - Request id: 3db02533-372f-4cdd-9035-99cc473a2155
+2025-01-18 19:08:00,343 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:08:00,343 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,343 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,343 - DEBUG - _cmd_query
+2025-01-18 19:08:00,343 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,344 - DEBUG - Cache Entry: (0, 1737248875719991, 0)
+2025-01-18 19:08:00,344 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248875719991, 'priority': 0, 'context': {'base64Data': 'CJ7sJA=='}}]}
+2025-01-18 19:08:00,344 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[3], is_file_transfer=[False]
+2025-01-18 19:08:00,344 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,345 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,345 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,345 - DEBUG - Request guid: 61fc96e4-59eb-4f2a-8d27-a1e5eb890345
+2025-01-18 19:08:00,345 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,416 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=3db02533-372f-4cdd-9035-99cc473a2155&request_guid=61fc96e4-59eb-4f2a-8d27-a1e5eb890345 HTTP/1.1" 200 1502
+2025-01-18 19:08:00,417 - DEBUG - SUCCESS
+2025-01-18 19:08:00,417 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,418 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,418 - DEBUG - Query id: 01b9ce23-0002-4c76-0007-08ea001fc002
+2025-01-18 19:08:00,418 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248875797573, 'priority': 0, 'context': 'CNrjJA=='}]}
+2025-01-18 19:08:00,418 - DEBUG - Cache Entry: (0, 1737248875719991, 0)
+2025-01-18 19:08:00,418 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248875797573, 'priority': 0, 'context': 'CNrjJA=='}
+2025-01-18 19:08:00,418 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,418 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,418 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,418 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,418 - DEBUG - Cache Entry: (0, 1737248875797573, 0)
+2025-01-18 19:08:00,418 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,418 - DEBUG - sfqid: 01b9ce23-0002-4c76-0007-08ea001fc002
+2025-01-18 19:08:00,418 - DEBUG - query execution done
+2025-01-18 19:08:00,419 - DEBUG - SUCCESS
+2025-01-18 19:08:00,419 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,419 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,419 - INFO - Number of results in first chunk: 0
+2025-01-18 19:08:00,420 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,421 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:08:00,421 - DEBUG - sequence counter: 4
+2025-01-18 19:08:00,421 - DEBUG - Request id: 43c770ac-f22c-4d18-a089-d5b5e496c73f
+2025-01-18 19:08:00,421 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:08:00,421 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,421 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,421 - DEBUG - _cmd_query
+2025-01-18 19:08:00,421 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,421 - DEBUG - Cache Entry: (0, 1737248875797573, 0)
+2025-01-18 19:08:00,422 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248875797573, 'priority': 0, 'context': {'base64Data': 'CNrjJA=='}}]}
+2025-01-18 19:08:00,422 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[4], is_file_transfer=[False]
+2025-01-18 19:08:00,422 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,423 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,423 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,423 - DEBUG - Request guid: 5b16243d-9a03-4323-9595-4bd1331262f0
+2025-01-18 19:08:00,423 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,506 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=43c770ac-f22c-4d18-a089-d5b5e496c73f&request_guid=5b16243d-9a03-4323-9595-4bd1331262f0 HTTP/1.1" 200 1372
+2025-01-18 19:08:00,507 - DEBUG - SUCCESS
+2025-01-18 19:08:00,507 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,507 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,507 - DEBUG - Query id: 01b9ce23-0002-4c70-0007-08ea002040da
+2025-01-18 19:08:00,507 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248875895970, 'priority': 0, 'context': 'CMLjJA=='}]}
+2025-01-18 19:08:00,507 - DEBUG - Cache Entry: (0, 1737248875797573, 0)
+2025-01-18 19:08:00,507 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248875895970, 'priority': 0, 'context': 'CMLjJA=='}
+2025-01-18 19:08:00,507 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,507 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,507 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,507 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,507 - DEBUG - Cache Entry: (0, 1737248875895970, 0)
+2025-01-18 19:08:00,507 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,507 - DEBUG - sfqid: 01b9ce23-0002-4c70-0007-08ea002040da
+2025-01-18 19:08:00,507 - DEBUG - query execution done
+2025-01-18 19:08:00,507 - DEBUG - SUCCESS
+2025-01-18 19:08:00,507 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,507 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,508 - INFO - Number of results in first chunk: 0
+2025-01-18 19:08:00,509 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,509 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:08:00,509 - DEBUG - sequence counter: 5
+2025-01-18 19:08:00,509 - DEBUG - Request id: d5edb584-a0a4-4da3-ac4c-796c0051ced0
+2025-01-18 19:08:00,509 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:08:00,509 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,509 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,509 - DEBUG - _cmd_query
+2025-01-18 19:08:00,509 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,509 - DEBUG - Cache Entry: (0, 1737248875895970, 0)
+2025-01-18 19:08:00,509 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248875895970, 'priority': 0, 'context': {'base64Data': 'CMLjJA=='}}]}
+2025-01-18 19:08:00,509 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[5], is_file_transfer=[False]
+2025-01-18 19:08:00,510 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,510 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,510 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,510 - DEBUG - Request guid: 9f0f88ce-cef1-442a-aff8-7985b9873f62
+2025-01-18 19:08:00,510 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,585 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=d5edb584-a0a4-4da3-ac4c-796c0051ced0&request_guid=9f0f88ce-cef1-442a-aff8-7985b9873f62 HTTP/1.1" 200 1372
+2025-01-18 19:08:00,586 - DEBUG - SUCCESS
+2025-01-18 19:08:00,586 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,586 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,587 - DEBUG - Query id: 01b9ce23-0002-4c78-0007-08ea0020127a
+2025-01-18 19:08:00,587 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248875965481, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:08:00,587 - DEBUG - Cache Entry: (0, 1737248875895970, 0)
+2025-01-18 19:08:00,587 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248875965481, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:08:00,587 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,587 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,587 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,587 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,587 - DEBUG - Cache Entry: (0, 1737248875965481, 0)
+2025-01-18 19:08:00,587 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,587 - DEBUG - sfqid: 01b9ce23-0002-4c78-0007-08ea0020127a
+2025-01-18 19:08:00,587 - DEBUG - query execution done
+2025-01-18 19:08:00,587 - DEBUG - SUCCESS
+2025-01-18 19:08:00,587 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,587 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,587 - INFO - Number of results in first chunk: 0
+2025-01-18 19:08:00,588 - DEBUG - executing SQL/command
+2025-01-18 19:08:00,588 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:08:00,588 - DEBUG - sequence counter: 6
+2025-01-18 19:08:00,588 - DEBUG - Request id: 9619152c-5748-447b-a1ef-3b15894d101a
+2025-01-18 19:08:00,588 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:08:00,588 - DEBUG - is_file_transfer: True
+2025-01-18 19:08:00,588 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,588 - DEBUG - _cmd_query
+2025-01-18 19:08:00,588 - DEBUG - serialize_to_dict() called
+2025-01-18 19:08:00,588 - DEBUG - Cache Entry: (0, 1737248875965481, 0)
+2025-01-18 19:08:00,588 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248875965481, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:08:00,588 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[6], is_file_transfer=[False]
+2025-01-18 19:08:00,589 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:08:00,589 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:08:00,589 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:08:00,589 - DEBUG - Request guid: bd25d3b5-0280-49fc-8511-952567b02d99
+2025-01-18 19:08:00,589 - DEBUG - socket timeout: 60
+2025-01-18 19:08:00,707 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=9619152c-5748-447b-a1ef-3b15894d101a&request_guid=bd25d3b5-0280-49fc-8511-952567b02d99 HTTP/1.1" 200 2619
+2025-01-18 19:08:00,707 - DEBUG - SUCCESS
+2025-01-18 19:08:00,707 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:08:00,707 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:08:00,707 - DEBUG - Query id: 01b9ce23-0002-4c79-0007-08ea0020033e
+2025-01-18 19:08:00,708 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737248876099564, 'priority': 0, 'context': 'CObjJA=='}]}
+2025-01-18 19:08:00,708 - DEBUG - Cache Entry: (0, 1737248875965481, 0)
+2025-01-18 19:08:00,708 - DEBUG - deserialize {'id': 0, 'timestamp': 1737248876099564, 'priority': 0, 'context': 'CObjJA=='}
+2025-01-18 19:08:00,708 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:08:00,708 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,708 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:08:00,708 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:08:00,708 - DEBUG - Cache Entry: (0, 1737248876099564, 0)
+2025-01-18 19:08:00,708 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:08:00,708 - DEBUG - sfqid: 01b9ce23-0002-4c79-0007-08ea0020033e
+2025-01-18 19:08:00,708 - DEBUG - query execution done
+2025-01-18 19:08:00,708 - DEBUG - SUCCESS
+2025-01-18 19:08:00,708 - DEBUG - PUT OR GET: False
+2025-01-18 19:08:00,708 - DEBUG - Query result format: arrow
+2025-01-18 19:08:00,708 - INFO - Number of results in first chunk: 54
+2025-01-18 19:08:00,708 - DEBUG - Execute query [queryID: 01b9ce23-0002-4c79-0007-08ea0020033e]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:08:00,708 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:08:00,708 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:08:00,708 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:08:00,708 - DEBUG - Batches read: 0
+2025-01-18 19:08:00,708 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:08:00,708 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:24:13,003 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:24:13,003 - INFO - Querying the server for client info
+2025-01-18 19:24:13,003 - DEBUG - cursor
+2025-01-18 19:24:13,004 - DEBUG - executing SQL/command
+2025-01-18 19:24:13,004 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:24:13,004 - DEBUG - sequence counter: 7
+2025-01-18 19:24:13,004 - DEBUG - Request id: c49ac55a-3189-418c-a6a6-ffae6c4709dc
+2025-01-18 19:24:13,004 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:24:13,004 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:13,004 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,004 - DEBUG - _cmd_query
+2025-01-18 19:24:13,004 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:13,004 - DEBUG - Cache Entry: (0, 1737248876099564, 0)
+2025-01-18 19:24:13,004 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737248876099564, 'priority': 0, 'context': {'base64Data': 'CObjJA=='}}]}
+2025-01-18 19:24:13,004 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[7], is_file_transfer=[False]
+2025-01-18 19:24:13,005 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:13,006 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:13,006 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:13,006 - DEBUG - Request guid: 50662311-55fd-4415-8d6b-5bb3c3e0823f
+2025-01-18 19:24:13,006 - DEBUG - socket timeout: 60
+2025-01-18 19:24:13,007 - DEBUG - Resetting dropped connection: gmcpdcz-mt01740.snowflakecomputing.com
+2025-01-18 19:24:13,460 - DEBUG - OCSP Mode: FAIL_OPEN, OCSP response cache file name: None
+2025-01-18 19:24:13,461 - DEBUG - ocsp_response_cache_uri: file://C:/Users/ajjay/AppData/Local/Snowflake/Caches/ocsp_response_cache.json
+2025-01-18 19:24:13,461 - DEBUG - OCSP_VALIDATION_CACHE size: 310
+2025-01-18 19:24:13,461 - DEBUG - OCSP response cache server is enabled: http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+2025-01-18 19:24:13,461 - DEBUG - OCSP dynamic cache server RETRY URL: None
+2025-01-18 19:24:13,461 - DEBUG - validating certificate: gmcpdcz-mt01740.snowflakecomputing.com
+2025-01-18 19:24:13,461 - DEBUG - # of certificates: 4
+2025-01-18 19:24:13,462 - DEBUG - subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:24:13,462 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:24:13,463 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')]), issuer: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:24:13,463 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:24:13,465 - DEBUG - not found issuer_der: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:24:13,466 - DEBUG - hit cache for subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')])
+2025-01-18 19:24:13,467 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:24:13,467 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:24:13,468 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:24:13,468 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:24:13,470 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2025-05-07 12:00:00+00:00
+2025-01-18 19:24:13,470 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:24:13,471 - DEBUG - ok
+2025-01-18 19:24:13,650 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=c49ac55a-3189-418c-a6a6-ffae6c4709dc&request_guid=50662311-55fd-4415-8d6b-5bb3c3e0823f HTTP/1.1" 200 2619
+2025-01-18 19:24:13,650 - DEBUG - SUCCESS
+2025-01-18 19:24:13,650 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:13,650 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:13,650 - DEBUG - Query id: 01b9ce34-0002-4c79-0007-08ea00200416
+2025-01-18 19:24:13,651 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849033048, 'priority': 0, 'context': 'CObjJA=='}]}
+2025-01-18 19:24:13,651 - DEBUG - Cache Entry: (0, 1737248876099564, 0)
+2025-01-18 19:24:13,651 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849033048, 'priority': 0, 'context': 'CObjJA=='}
+2025-01-18 19:24:13,651 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:13,651 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,651 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,651 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:13,651 - DEBUG - Cache Entry: (0, 1737249849033048, 0)
+2025-01-18 19:24:13,651 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,651 - DEBUG - sfqid: 01b9ce34-0002-4c79-0007-08ea00200416
+2025-01-18 19:24:13,651 - DEBUG - query execution done
+2025-01-18 19:24:13,651 - DEBUG - SUCCESS
+2025-01-18 19:24:13,651 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:13,651 - DEBUG - Query result format: arrow
+2025-01-18 19:24:13,651 - INFO - Number of results in first chunk: 1
+2025-01-18 19:24:13,651 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:24:13,651 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:24:13,651 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:24:13,651 - DEBUG - Batches read: 0
+2025-01-18 19:24:13,651 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:24:13,652 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:24:13,652 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:24:13,652 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:24:13,652 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:24:13,652 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:24:13,653 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:24:13,656 - DEBUG - cursor
+2025-01-18 19:24:13,656 - DEBUG - executing SQL/command
+2025-01-18 19:24:13,656 - DEBUG - query: [SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.MODELED.US_ADDRESS...]
+2025-01-18 19:24:13,656 - DEBUG - sequence counter: 8
+2025-01-18 19:24:13,657 - DEBUG - Request id: b26d56af-38b4-40d8-a4fb-438ed119bb06
+2025-01-18 19:24:13,657 - DEBUG - running query [SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.MODELED.US_ADDRESS...]
+2025-01-18 19:24:13,657 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:13,657 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,657 - DEBUG - _cmd_query
+2025-01-18 19:24:13,657 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:13,657 - DEBUG - Cache Entry: (0, 1737249849033048, 0)
+2025-01-18 19:24:13,657 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849033048, 'priority': 0, 'context': {'base64Data': 'CObjJA=='}}]}
+2025-01-18 19:24:13,657 - DEBUG - sql=[SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.MODELED.US_ADDRESS...], sequence_id=[8], is_file_transfer=[False]
+2025-01-18 19:24:13,658 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:13,659 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:13,659 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:13,659 - DEBUG - Request guid: 97162705-bb9f-445f-98ea-1dd4dcdf80f6
+2025-01-18 19:24:13,659 - DEBUG - socket timeout: 60
+2025-01-18 19:24:13,755 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=b26d56af-38b4-40d8-a4fb-438ed119bb06&request_guid=97162705-bb9f-445f-98ea-1dd4dcdf80f6 HTTP/1.1" 200 5642
+2025-01-18 19:24:13,756 - DEBUG - SUCCESS
+2025-01-18 19:24:13,756 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:13,756 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:13,756 - DEBUG - Query id: 01b9ce34-0002-4c7a-0007-08ea001ff8e6
+2025-01-18 19:24:13,756 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849148908, 'priority': 0, 'context': 'COrjJA=='}]}
+2025-01-18 19:24:13,757 - DEBUG - Cache Entry: (0, 1737249849033048, 0)
+2025-01-18 19:24:13,757 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849148908, 'priority': 0, 'context': 'COrjJA=='}
+2025-01-18 19:24:13,757 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:13,757 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,757 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,757 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:13,757 - DEBUG - Cache Entry: (0, 1737249849148908, 0)
+2025-01-18 19:24:13,757 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,757 - DEBUG - sfqid: 01b9ce34-0002-4c7a-0007-08ea001ff8e6
+2025-01-18 19:24:13,757 - DEBUG - query execution done
+2025-01-18 19:24:13,757 - DEBUG - SUCCESS
+2025-01-18 19:24:13,757 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:13,758 - DEBUG - Query result format: arrow
+2025-01-18 19:24:13,758 - INFO - Number of results in first chunk: 200
+2025-01-18 19:24:13,758 - DEBUG - Execute query [queryID: 01b9ce34-0002-4c7a-0007-08ea001ff8e6] 
+        SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE 
+        FROM DEV_DP_APP.MODELED.US_ADDRESS_LIST 
+        WHERE CONTAINS(LOWER(LOCATION), LOWER('Saint Paul, MN 55101'))
+        LIMIT 200
+        
+2025-01-18 19:24:13,758 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:24:13,758 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:24:13,758 - DEBUG - Batches read: 1
+2025-01-18 19:24:13,764 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:24:13,772 - DEBUG - executing SQL/command
+2025-01-18 19:24:13,772 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:24:13,772 - DEBUG - sequence counter: 9
+2025-01-18 19:24:13,772 - DEBUG - Request id: 2d454c50-4402-4336-b52b-ea39b6bd1bf2
+2025-01-18 19:24:13,772 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:24:13,772 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:13,772 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,772 - DEBUG - _cmd_query
+2025-01-18 19:24:13,772 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:13,772 - DEBUG - Cache Entry: (0, 1737249849148908, 0)
+2025-01-18 19:24:13,772 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849148908, 'priority': 0, 'context': {'base64Data': 'COrjJA=='}}]}
+2025-01-18 19:24:13,772 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[9], is_file_transfer=[False]
+2025-01-18 19:24:13,773 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:13,774 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:13,774 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:13,774 - DEBUG - Request guid: 3aaae3b3-2c0e-4635-9fd4-001af501c075
+2025-01-18 19:24:13,774 - DEBUG - socket timeout: 60
+2025-01-18 19:24:13,845 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=2d454c50-4402-4336-b52b-ea39b6bd1bf2&request_guid=3aaae3b3-2c0e-4635-9fd4-001af501c075 HTTP/1.1" 200 1501
+2025-01-18 19:24:13,845 - DEBUG - SUCCESS
+2025-01-18 19:24:13,845 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:13,845 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:13,845 - DEBUG - Query id: 01b9ce34-0002-4c78-0007-08ea002013a2
+2025-01-18 19:24:13,845 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849233779, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:24:13,845 - DEBUG - Cache Entry: (0, 1737249849148908, 0)
+2025-01-18 19:24:13,845 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849233779, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:24:13,845 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:13,845 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,845 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,845 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:13,846 - DEBUG - Cache Entry: (0, 1737249849233779, 0)
+2025-01-18 19:24:13,846 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,846 - DEBUG - sfqid: 01b9ce34-0002-4c78-0007-08ea002013a2
+2025-01-18 19:24:13,846 - DEBUG - query execution done
+2025-01-18 19:24:13,846 - DEBUG - SUCCESS
+2025-01-18 19:24:13,846 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:13,846 - DEBUG - Query result format: arrow
+2025-01-18 19:24:13,846 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:13,847 - DEBUG - executing SQL/command
+2025-01-18 19:24:13,847 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:24:13,847 - DEBUG - sequence counter: 10
+2025-01-18 19:24:13,847 - DEBUG - Request id: be2e8eae-bc5c-473c-8fe9-88c0cd33794f
+2025-01-18 19:24:13,847 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:24:13,847 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:13,847 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,847 - DEBUG - _cmd_query
+2025-01-18 19:24:13,847 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:13,847 - DEBUG - Cache Entry: (0, 1737249849233779, 0)
+2025-01-18 19:24:13,847 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849233779, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:24:13,847 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[10], is_file_transfer=[False]
+2025-01-18 19:24:13,848 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:13,848 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:13,848 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:13,848 - DEBUG - Request guid: fd94b771-b671-42b5-b9c5-7378587a78dc
+2025-01-18 19:24:13,848 - DEBUG - socket timeout: 60
+2025-01-18 19:24:13,966 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=be2e8eae-bc5c-473c-8fe9-88c0cd33794f&request_guid=fd94b771-b671-42b5-b9c5-7378587a78dc HTTP/1.1" 200 1375
+2025-01-18 19:24:13,967 - DEBUG - SUCCESS
+2025-01-18 19:24:13,967 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:13,967 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:13,967 - DEBUG - Query id: 01b9ce34-0002-4c77-0007-08ea001fdf92
+2025-01-18 19:24:13,967 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849356128, 'priority': 0, 'context': 'CN7jJA=='}]}
+2025-01-18 19:24:13,967 - DEBUG - Cache Entry: (0, 1737249849233779, 0)
+2025-01-18 19:24:13,968 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849356128, 'priority': 0, 'context': 'CN7jJA=='}
+2025-01-18 19:24:13,968 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:13,968 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,968 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:13,968 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:13,968 - DEBUG - Cache Entry: (0, 1737249849356128, 0)
+2025-01-18 19:24:13,968 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,968 - DEBUG - sfqid: 01b9ce34-0002-4c77-0007-08ea001fdf92
+2025-01-18 19:24:13,968 - DEBUG - query execution done
+2025-01-18 19:24:13,968 - DEBUG - SUCCESS
+2025-01-18 19:24:13,968 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:13,968 - DEBUG - Query result format: arrow
+2025-01-18 19:24:13,968 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:13,969 - DEBUG - executing SQL/command
+2025-01-18 19:24:13,969 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:24:13,969 - DEBUG - sequence counter: 11
+2025-01-18 19:24:13,969 - DEBUG - Request id: 8994c0bf-63ab-412c-b03a-969d8ca243c7
+2025-01-18 19:24:13,969 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:24:13,969 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:13,969 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:13,969 - DEBUG - _cmd_query
+2025-01-18 19:24:13,969 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:13,969 - DEBUG - Cache Entry: (0, 1737249849356128, 0)
+2025-01-18 19:24:13,969 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849356128, 'priority': 0, 'context': {'base64Data': 'CN7jJA=='}}]}
+2025-01-18 19:24:13,969 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[11], is_file_transfer=[False]
+2025-01-18 19:24:13,970 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:13,970 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:13,970 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:13,970 - DEBUG - Request guid: cd552684-c031-4b03-a2d5-a37298f7a316
+2025-01-18 19:24:13,970 - DEBUG - socket timeout: 60
+2025-01-18 19:24:14,032 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=8994c0bf-63ab-412c-b03a-969d8ca243c7&request_guid=cd552684-c031-4b03-a2d5-a37298f7a316 HTTP/1.1" 200 1375
+2025-01-18 19:24:14,033 - DEBUG - SUCCESS
+2025-01-18 19:24:14,033 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:14,033 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:14,033 - DEBUG - Query id: 01b9ce34-0002-4c7a-0007-08ea001ff8ea
+2025-01-18 19:24:14,033 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849408023, 'priority': 0, 'context': 'COrjJA=='}]}
+2025-01-18 19:24:14,033 - DEBUG - Cache Entry: (0, 1737249849356128, 0)
+2025-01-18 19:24:14,033 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849408023, 'priority': 0, 'context': 'COrjJA=='}
+2025-01-18 19:24:14,033 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:14,033 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:14,033 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:14,033 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:14,034 - DEBUG - Cache Entry: (0, 1737249849408023, 0)
+2025-01-18 19:24:14,034 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:14,034 - DEBUG - sfqid: 01b9ce34-0002-4c7a-0007-08ea001ff8ea
+2025-01-18 19:24:14,034 - DEBUG - query execution done
+2025-01-18 19:24:14,034 - DEBUG - SUCCESS
+2025-01-18 19:24:14,034 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:14,034 - DEBUG - Query result format: arrow
+2025-01-18 19:24:14,034 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:14,035 - DEBUG - executing SQL/command
+2025-01-18 19:24:14,035 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:24:14,035 - DEBUG - sequence counter: 12
+2025-01-18 19:24:14,035 - DEBUG - Request id: d3393a5c-f8bb-4604-9d99-2fb39104fb1e
+2025-01-18 19:24:14,035 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:24:14,035 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:14,035 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:14,035 - DEBUG - _cmd_query
+2025-01-18 19:24:14,035 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:14,035 - DEBUG - Cache Entry: (0, 1737249849408023, 0)
+2025-01-18 19:24:14,035 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849408023, 'priority': 0, 'context': {'base64Data': 'COrjJA=='}}]}
+2025-01-18 19:24:14,035 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[12], is_file_transfer=[False]
+2025-01-18 19:24:14,036 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:14,036 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:14,036 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:14,036 - DEBUG - Request guid: a3b715b2-8dd2-4d39-8d96-3d39c29636f4
+2025-01-18 19:24:14,036 - DEBUG - socket timeout: 60
+2025-01-18 19:24:14,137 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=d3393a5c-f8bb-4604-9d99-2fb39104fb1e&request_guid=a3b715b2-8dd2-4d39-8d96-3d39c29636f4 HTTP/1.1" 200 2616
+2025-01-18 19:24:14,138 - DEBUG - SUCCESS
+2025-01-18 19:24:14,138 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:14,138 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:14,138 - DEBUG - Query id: 01b9ce34-0002-4c70-0007-08ea0020419e
+2025-01-18 19:24:14,138 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249849530574, 'priority': 0, 'context': 'CMLjJA=='}]}
+2025-01-18 19:24:14,138 - DEBUG - Cache Entry: (0, 1737249849408023, 0)
+2025-01-18 19:24:14,138 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249849530574, 'priority': 0, 'context': 'CMLjJA=='}
+2025-01-18 19:24:14,138 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:14,138 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:14,138 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:14,138 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:14,138 - DEBUG - Cache Entry: (0, 1737249849530574, 0)
+2025-01-18 19:24:14,138 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:14,138 - DEBUG - sfqid: 01b9ce34-0002-4c70-0007-08ea0020419e
+2025-01-18 19:24:14,138 - DEBUG - query execution done
+2025-01-18 19:24:14,138 - DEBUG - SUCCESS
+2025-01-18 19:24:14,138 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:14,138 - DEBUG - Query result format: arrow
+2025-01-18 19:24:14,139 - INFO - Number of results in first chunk: 54
+2025-01-18 19:24:14,139 - DEBUG - Execute query [queryID: 01b9ce34-0002-4c70-0007-08ea0020419e]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:24:14,139 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:24:14,139 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:24:14,139 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:24:14,139 - DEBUG - Batches read: 0
+2025-01-18 19:24:14,139 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:24:14,139 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:24:15,480 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:24:15,480 - INFO - Querying the server for client info
+2025-01-18 19:24:15,480 - DEBUG - cursor
+2025-01-18 19:24:15,480 - DEBUG - executing SQL/command
+2025-01-18 19:24:15,481 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:24:15,481 - DEBUG - sequence counter: 13
+2025-01-18 19:24:15,481 - DEBUG - Request id: 6c269502-a422-4a2e-b1bf-66aac7635cb8
+2025-01-18 19:24:15,481 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:24:15,481 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:15,481 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,481 - DEBUG - _cmd_query
+2025-01-18 19:24:15,481 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:15,481 - DEBUG - Cache Entry: (0, 1737249849530574, 0)
+2025-01-18 19:24:15,481 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249849530574, 'priority': 0, 'context': {'base64Data': 'CMLjJA=='}}]}
+2025-01-18 19:24:15,481 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[13], is_file_transfer=[False]
+2025-01-18 19:24:15,482 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:15,482 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:15,482 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:15,482 - DEBUG - Request guid: 6eae3e9b-c544-4714-8728-3c574410e67a
+2025-01-18 19:24:15,482 - DEBUG - socket timeout: 60
+2025-01-18 19:24:15,589 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=6c269502-a422-4a2e-b1bf-66aac7635cb8&request_guid=6eae3e9b-c544-4714-8728-3c574410e67a HTTP/1.1" 200 2618
+2025-01-18 19:24:15,590 - DEBUG - SUCCESS
+2025-01-18 19:24:15,590 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:15,590 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:15,590 - DEBUG - Query id: 01b9ce34-0002-4c71-0007-08ea0020234e
+2025-01-18 19:24:15,590 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249850974832, 'priority': 0, 'context': 'CMbjJA=='}]}
+2025-01-18 19:24:15,590 - DEBUG - Cache Entry: (0, 1737249849530574, 0)
+2025-01-18 19:24:15,590 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249850974832, 'priority': 0, 'context': 'CMbjJA=='}
+2025-01-18 19:24:15,591 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:15,591 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,591 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,591 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:15,591 - DEBUG - Cache Entry: (0, 1737249850974832, 0)
+2025-01-18 19:24:15,591 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,591 - DEBUG - sfqid: 01b9ce34-0002-4c71-0007-08ea0020234e
+2025-01-18 19:24:15,591 - DEBUG - query execution done
+2025-01-18 19:24:15,591 - DEBUG - SUCCESS
+2025-01-18 19:24:15,591 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:15,591 - DEBUG - Query result format: arrow
+2025-01-18 19:24:15,591 - INFO - Number of results in first chunk: 1
+2025-01-18 19:24:15,591 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:24:15,591 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:24:15,592 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:24:15,592 - DEBUG - Batches read: 0
+2025-01-18 19:24:15,592 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:24:15,592 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:24:15,592 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:24:15,592 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:24:15,592 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:24:15,592 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:24:15,592 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:24:15,597 - DEBUG - cursor
+2025-01-18 19:24:15,598 - DEBUG - executing SQL/command
+2025-01-18 19:24:15,598 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:24:15,598 - DEBUG - sequence counter: 14
+2025-01-18 19:24:15,598 - DEBUG - Request id: 984cc153-03e1-4f0d-9726-919e42469bdb
+2025-01-18 19:24:15,598 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:24:15,598 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:15,598 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,598 - DEBUG - _cmd_query
+2025-01-18 19:24:15,598 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:15,598 - DEBUG - Cache Entry: (0, 1737249850974832, 0)
+2025-01-18 19:24:15,598 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249850974832, 'priority': 0, 'context': {'base64Data': 'CMbjJA=='}}]}
+2025-01-18 19:24:15,598 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[14], is_file_transfer=[False]
+2025-01-18 19:24:15,599 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:15,599 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:15,599 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:15,600 - DEBUG - Request guid: 2e8324a0-e032-404f-b389-c946d6cdd374
+2025-01-18 19:24:15,600 - DEBUG - socket timeout: 60
+2025-01-18 19:24:15,670 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=984cc153-03e1-4f0d-9726-919e42469bdb&request_guid=2e8324a0-e032-404f-b389-c946d6cdd374 HTTP/1.1" 200 1499
+2025-01-18 19:24:15,671 - DEBUG - SUCCESS
+2025-01-18 19:24:15,671 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:15,671 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:15,671 - DEBUG - Query id: 01b9ce34-0002-4c70-0007-08ea002041a2
+2025-01-18 19:24:15,671 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249851055761, 'priority': 0, 'context': 'CMLjJA=='}]}
+2025-01-18 19:24:15,671 - DEBUG - Cache Entry: (0, 1737249850974832, 0)
+2025-01-18 19:24:15,671 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249851055761, 'priority': 0, 'context': 'CMLjJA=='}
+2025-01-18 19:24:15,671 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:15,671 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,671 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,671 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:15,671 - DEBUG - Cache Entry: (0, 1737249851055761, 0)
+2025-01-18 19:24:15,672 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,672 - DEBUG - sfqid: 01b9ce34-0002-4c70-0007-08ea002041a2
+2025-01-18 19:24:15,672 - DEBUG - query execution done
+2025-01-18 19:24:15,672 - DEBUG - SUCCESS
+2025-01-18 19:24:15,672 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:15,672 - DEBUG - Query result format: arrow
+2025-01-18 19:24:15,672 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:15,673 - DEBUG - executing SQL/command
+2025-01-18 19:24:15,674 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:24:15,674 - DEBUG - sequence counter: 15
+2025-01-18 19:24:15,674 - DEBUG - Request id: 7196fe4c-806c-4f06-93da-0b11ee0632de
+2025-01-18 19:24:15,674 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:24:15,674 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:15,674 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,674 - DEBUG - _cmd_query
+2025-01-18 19:24:15,674 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:15,674 - DEBUG - Cache Entry: (0, 1737249851055761, 0)
+2025-01-18 19:24:15,674 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249851055761, 'priority': 0, 'context': {'base64Data': 'CMLjJA=='}}]}
+2025-01-18 19:24:15,674 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[15], is_file_transfer=[False]
+2025-01-18 19:24:15,675 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:15,675 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:15,675 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:15,675 - DEBUG - Request guid: 2cdb7bfa-3463-4b7b-9a66-8788d65d9214
+2025-01-18 19:24:15,675 - DEBUG - socket timeout: 60
+2025-01-18 19:24:15,737 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=7196fe4c-806c-4f06-93da-0b11ee0632de&request_guid=2cdb7bfa-3463-4b7b-9a66-8788d65d9214 HTTP/1.1" 200 1372
+2025-01-18 19:24:15,738 - DEBUG - SUCCESS
+2025-01-18 19:24:15,738 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:15,738 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:15,738 - DEBUG - Query id: 01b9ce34-0002-4c76-0007-08ea0020511e
+2025-01-18 19:24:15,739 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249851129724, 'priority': 0, 'context': 'CNrjJA=='}]}
+2025-01-18 19:24:15,739 - DEBUG - Cache Entry: (0, 1737249851055761, 0)
+2025-01-18 19:24:15,739 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249851129724, 'priority': 0, 'context': 'CNrjJA=='}
+2025-01-18 19:24:15,739 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:15,739 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,739 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,739 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:15,739 - DEBUG - Cache Entry: (0, 1737249851129724, 0)
+2025-01-18 19:24:15,739 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,739 - DEBUG - sfqid: 01b9ce34-0002-4c76-0007-08ea0020511e
+2025-01-18 19:24:15,739 - DEBUG - query execution done
+2025-01-18 19:24:15,739 - DEBUG - SUCCESS
+2025-01-18 19:24:15,740 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:15,740 - DEBUG - Query result format: arrow
+2025-01-18 19:24:15,740 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:15,740 - DEBUG - executing SQL/command
+2025-01-18 19:24:15,740 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:24:15,740 - DEBUG - sequence counter: 16
+2025-01-18 19:24:15,740 - DEBUG - Request id: 90bb5a09-e1d5-438c-8c12-2c3195c4a29e
+2025-01-18 19:24:15,740 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:24:15,741 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:15,741 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,741 - DEBUG - _cmd_query
+2025-01-18 19:24:15,741 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:15,741 - DEBUG - Cache Entry: (0, 1737249851129724, 0)
+2025-01-18 19:24:15,741 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249851129724, 'priority': 0, 'context': {'base64Data': 'CNrjJA=='}}]}
+2025-01-18 19:24:15,741 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[16], is_file_transfer=[False]
+2025-01-18 19:24:15,741 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:15,742 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:15,742 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:15,742 - DEBUG - Request guid: 852d1690-1305-4a9d-ba6e-44ff5e52dc78
+2025-01-18 19:24:15,742 - DEBUG - socket timeout: 60
+2025-01-18 19:24:15,800 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=90bb5a09-e1d5-438c-8c12-2c3195c4a29e&request_guid=852d1690-1305-4a9d-ba6e-44ff5e52dc78 HTTP/1.1" 200 1374
+2025-01-18 19:24:15,801 - DEBUG - SUCCESS
+2025-01-18 19:24:15,801 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:15,801 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:15,801 - DEBUG - Query id: 01b9ce34-0002-4d87-0007-08ea001fe952
+2025-01-18 19:24:15,801 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249851173833, 'priority': 0, 'context': 'CJ7sJA=='}]}
+2025-01-18 19:24:15,801 - DEBUG - Cache Entry: (0, 1737249851129724, 0)
+2025-01-18 19:24:15,801 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249851173833, 'priority': 0, 'context': 'CJ7sJA=='}
+2025-01-18 19:24:15,801 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:15,801 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,802 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,802 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:15,802 - DEBUG - Cache Entry: (0, 1737249851173833, 0)
+2025-01-18 19:24:15,802 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,802 - DEBUG - sfqid: 01b9ce34-0002-4d87-0007-08ea001fe952
+2025-01-18 19:24:15,802 - DEBUG - query execution done
+2025-01-18 19:24:15,802 - DEBUG - SUCCESS
+2025-01-18 19:24:15,802 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:15,802 - DEBUG - Query result format: arrow
+2025-01-18 19:24:15,802 - INFO - Number of results in first chunk: 0
+2025-01-18 19:24:15,803 - DEBUG - executing SQL/command
+2025-01-18 19:24:15,803 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:24:15,803 - DEBUG - sequence counter: 17
+2025-01-18 19:24:15,803 - DEBUG - Request id: 1a5bbf1c-dfa6-4f17-9bc5-41712184a94a
+2025-01-18 19:24:15,803 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:24:15,803 - DEBUG - is_file_transfer: True
+2025-01-18 19:24:15,803 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,803 - DEBUG - _cmd_query
+2025-01-18 19:24:15,803 - DEBUG - serialize_to_dict() called
+2025-01-18 19:24:15,803 - DEBUG - Cache Entry: (0, 1737249851173833, 0)
+2025-01-18 19:24:15,803 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249851173833, 'priority': 0, 'context': {'base64Data': 'CJ7sJA=='}}]}
+2025-01-18 19:24:15,803 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[17], is_file_transfer=[False]
+2025-01-18 19:24:15,804 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:24:15,804 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:24:15,804 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:24:15,804 - DEBUG - Request guid: 5473b477-9608-483f-ae99-ce7f09a960a0
+2025-01-18 19:24:15,804 - DEBUG - socket timeout: 60
+2025-01-18 19:24:15,897 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=1a5bbf1c-dfa6-4f17-9bc5-41712184a94a&request_guid=5473b477-9608-483f-ae99-ce7f09a960a0 HTTP/1.1" 200 2618
+2025-01-18 19:24:15,898 - DEBUG - SUCCESS
+2025-01-18 19:24:15,898 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:24:15,898 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:24:15,898 - DEBUG - Query id: 01b9ce34-0002-4c78-0007-08ea002013a6
+2025-01-18 19:24:15,898 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249851278213, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:24:15,899 - DEBUG - Cache Entry: (0, 1737249851173833, 0)
+2025-01-18 19:24:15,899 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249851278213, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:24:15,899 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:24:15,899 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,899 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:24:15,899 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:24:15,899 - DEBUG - Cache Entry: (0, 1737249851278213, 0)
+2025-01-18 19:24:15,899 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:24:15,899 - DEBUG - sfqid: 01b9ce34-0002-4c78-0007-08ea002013a6
+2025-01-18 19:24:15,899 - DEBUG - query execution done
+2025-01-18 19:24:15,899 - DEBUG - SUCCESS
+2025-01-18 19:24:15,899 - DEBUG - PUT OR GET: False
+2025-01-18 19:24:15,899 - DEBUG - Query result format: arrow
+2025-01-18 19:24:15,899 - INFO - Number of results in first chunk: 54
+2025-01-18 19:24:15,899 - DEBUG - Execute query [queryID: 01b9ce34-0002-4c78-0007-08ea002013a6]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:24:15,899 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:24:15,899 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:24:15,899 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:24:15,899 - DEBUG - Batches read: 0
+2025-01-18 19:24:15,899 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:24:15,900 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:25:42,636 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:25:42,636 - INFO - Querying the server for client info
+2025-01-18 19:25:42,636 - DEBUG - cursor
+2025-01-18 19:25:42,636 - DEBUG - executing SQL/command
+2025-01-18 19:25:42,636 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:25:42,636 - DEBUG - sequence counter: 18
+2025-01-18 19:25:42,636 - DEBUG - Request id: ff6d1f8c-1e1f-4863-9dea-6e5f774b1daf
+2025-01-18 19:25:42,636 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:25:42,636 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:42,636 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,636 - DEBUG - _cmd_query
+2025-01-18 19:25:42,636 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:42,636 - DEBUG - Cache Entry: (0, 1737249851278213, 0)
+2025-01-18 19:25:42,636 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249851278213, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:25:42,636 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[18], is_file_transfer=[False]
+2025-01-18 19:25:42,638 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:42,638 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:42,639 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:42,639 - DEBUG - Request guid: 7ae0b893-9943-4ce8-a41c-3f735bc248c6
+2025-01-18 19:25:42,639 - DEBUG - socket timeout: 60
+2025-01-18 19:25:42,746 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=ff6d1f8c-1e1f-4863-9dea-6e5f774b1daf&request_guid=7ae0b893-9943-4ce8-a41c-3f735bc248c6 HTTP/1.1" 200 2620
+2025-01-18 19:25:42,747 - DEBUG - SUCCESS
+2025-01-18 19:25:42,747 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:42,747 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:42,747 - DEBUG - Query id: 01b9ce35-0002-4c5d-0007-08ea0020604e
+2025-01-18 19:25:42,747 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249938132764, 'priority': 0, 'context': 'CPbiJA=='}]}
+2025-01-18 19:25:42,747 - DEBUG - Cache Entry: (0, 1737249851278213, 0)
+2025-01-18 19:25:42,747 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249938132764, 'priority': 0, 'context': 'CPbiJA=='}
+2025-01-18 19:25:42,747 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:42,747 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,747 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,747 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:42,747 - DEBUG - Cache Entry: (0, 1737249938132764, 0)
+2025-01-18 19:25:42,748 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,748 - DEBUG - sfqid: 01b9ce35-0002-4c5d-0007-08ea0020604e
+2025-01-18 19:25:42,748 - DEBUG - query execution done
+2025-01-18 19:25:42,748 - DEBUG - SUCCESS
+2025-01-18 19:25:42,748 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:42,748 - DEBUG - Query result format: arrow
+2025-01-18 19:25:42,748 - INFO - Number of results in first chunk: 1
+2025-01-18 19:25:42,748 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:25:42,748 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:25:42,748 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:25:42,748 - DEBUG - Batches read: 0
+2025-01-18 19:25:42,748 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:25:42,749 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:25:42,749 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:25:42,749 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:25:42,749 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:25:42,749 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:25:42,749 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:25:42,756 - DEBUG - cursor
+2025-01-18 19:25:42,757 - DEBUG - executing SQL/command
+2025-01-18 19:25:42,757 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:25:42,757 - DEBUG - sequence counter: 19
+2025-01-18 19:25:42,757 - DEBUG - Request id: 8c6e89c4-2957-430d-97cc-7b1fa7e19be4
+2025-01-18 19:25:42,757 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:25:42,757 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:42,757 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,757 - DEBUG - _cmd_query
+2025-01-18 19:25:42,757 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:42,757 - DEBUG - Cache Entry: (0, 1737249938132764, 0)
+2025-01-18 19:25:42,757 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249938132764, 'priority': 0, 'context': {'base64Data': 'CPbiJA=='}}]}
+2025-01-18 19:25:42,757 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[19], is_file_transfer=[False]
+2025-01-18 19:25:42,758 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:42,759 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:42,759 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:42,759 - DEBUG - Request guid: 532a9d76-5506-4fa9-b2c0-9d4c0f57512a
+2025-01-18 19:25:42,759 - DEBUG - socket timeout: 60
+2025-01-18 19:25:42,851 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=8c6e89c4-2957-430d-97cc-7b1fa7e19be4&request_guid=532a9d76-5506-4fa9-b2c0-9d4c0f57512a HTTP/1.1" 200 1500
+2025-01-18 19:25:42,852 - DEBUG - SUCCESS
+2025-01-18 19:25:42,853 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:42,853 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:42,853 - DEBUG - Query id: 01b9ce35-0002-4c78-0007-08ea002013ae
+2025-01-18 19:25:42,854 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249938240508, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:25:42,854 - DEBUG - Cache Entry: (0, 1737249938132764, 0)
+2025-01-18 19:25:42,854 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249938240508, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:25:42,854 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:42,855 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,855 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,855 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:42,855 - DEBUG - Cache Entry: (0, 1737249938240508, 0)
+2025-01-18 19:25:42,855 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,856 - DEBUG - sfqid: 01b9ce35-0002-4c78-0007-08ea002013ae
+2025-01-18 19:25:42,856 - DEBUG - query execution done
+2025-01-18 19:25:42,856 - DEBUG - SUCCESS
+2025-01-18 19:25:42,856 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:42,856 - DEBUG - Query result format: arrow
+2025-01-18 19:25:42,856 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:42,859 - DEBUG - executing SQL/command
+2025-01-18 19:25:42,859 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:25:42,859 - DEBUG - sequence counter: 20
+2025-01-18 19:25:42,859 - DEBUG - Request id: d2d65eea-35cb-4672-be69-8bac1f1cc293
+2025-01-18 19:25:42,859 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:25:42,859 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:42,860 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,860 - DEBUG - _cmd_query
+2025-01-18 19:25:42,860 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:42,860 - DEBUG - Cache Entry: (0, 1737249938240508, 0)
+2025-01-18 19:25:42,860 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249938240508, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:25:42,860 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[20], is_file_transfer=[False]
+2025-01-18 19:25:42,861 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:42,862 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:42,863 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:42,863 - DEBUG - Request guid: c675dce6-30c4-44ba-9fa4-6ce98eb5a535
+2025-01-18 19:25:42,863 - DEBUG - socket timeout: 60
+2025-01-18 19:25:42,946 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=d2d65eea-35cb-4672-be69-8bac1f1cc293&request_guid=c675dce6-30c4-44ba-9fa4-6ce98eb5a535 HTTP/1.1" 200 1374
+2025-01-18 19:25:42,946 - DEBUG - SUCCESS
+2025-01-18 19:25:42,947 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:42,947 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:42,947 - DEBUG - Query id: 01b9ce35-0002-4c7a-0007-08ea001ff8ee
+2025-01-18 19:25:42,947 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249938330228, 'priority': 0, 'context': 'COrjJA=='}]}
+2025-01-18 19:25:42,947 - DEBUG - Cache Entry: (0, 1737249938240508, 0)
+2025-01-18 19:25:42,947 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249938330228, 'priority': 0, 'context': 'COrjJA=='}
+2025-01-18 19:25:42,947 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:42,947 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,948 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:42,948 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:42,948 - DEBUG - Cache Entry: (0, 1737249938330228, 0)
+2025-01-18 19:25:42,948 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,948 - DEBUG - sfqid: 01b9ce35-0002-4c7a-0007-08ea001ff8ee
+2025-01-18 19:25:42,948 - DEBUG - query execution done
+2025-01-18 19:25:42,949 - DEBUG - SUCCESS
+2025-01-18 19:25:42,949 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:42,949 - DEBUG - Query result format: arrow
+2025-01-18 19:25:42,949 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:42,951 - DEBUG - executing SQL/command
+2025-01-18 19:25:42,951 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:25:42,951 - DEBUG - sequence counter: 21
+2025-01-18 19:25:42,952 - DEBUG - Request id: a9de8af8-699a-4399-a582-fa000d545712
+2025-01-18 19:25:42,952 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:25:42,952 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:42,952 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:42,952 - DEBUG - _cmd_query
+2025-01-18 19:25:42,952 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:42,952 - DEBUG - Cache Entry: (0, 1737249938330228, 0)
+2025-01-18 19:25:42,953 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249938330228, 'priority': 0, 'context': {'base64Data': 'COrjJA=='}}]}
+2025-01-18 19:25:42,953 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[21], is_file_transfer=[False]
+2025-01-18 19:25:42,954 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:42,955 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:42,955 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:42,955 - DEBUG - Request guid: ff352736-db6e-47e1-923d-566e77076daf
+2025-01-18 19:25:42,955 - DEBUG - socket timeout: 60
+2025-01-18 19:25:43,025 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=a9de8af8-699a-4399-a582-fa000d545712&request_guid=ff352736-db6e-47e1-923d-566e77076daf HTTP/1.1" 200 1374
+2025-01-18 19:25:43,026 - DEBUG - SUCCESS
+2025-01-18 19:25:43,026 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:43,026 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:43,026 - DEBUG - Query id: 01b9ce35-0002-4c76-0007-08ea00205156
+2025-01-18 19:25:43,026 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249938416072, 'priority': 0, 'context': 'CNrjJA=='}]}
+2025-01-18 19:25:43,026 - DEBUG - Cache Entry: (0, 1737249938330228, 0)
+2025-01-18 19:25:43,026 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249938416072, 'priority': 0, 'context': 'CNrjJA=='}
+2025-01-18 19:25:43,026 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:43,026 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:43,026 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:43,026 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:43,026 - DEBUG - Cache Entry: (0, 1737249938416072, 0)
+2025-01-18 19:25:43,026 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:43,027 - DEBUG - sfqid: 01b9ce35-0002-4c76-0007-08ea00205156
+2025-01-18 19:25:43,027 - DEBUG - query execution done
+2025-01-18 19:25:43,027 - DEBUG - SUCCESS
+2025-01-18 19:25:43,027 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:43,027 - DEBUG - Query result format: arrow
+2025-01-18 19:25:43,027 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:43,027 - DEBUG - executing SQL/command
+2025-01-18 19:25:43,027 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:25:43,027 - DEBUG - sequence counter: 22
+2025-01-18 19:25:43,027 - DEBUG - Request id: 10fb0f3d-67b3-4803-95c6-0f0548ed25b8
+2025-01-18 19:25:43,027 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:25:43,028 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:43,028 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:43,028 - DEBUG - _cmd_query
+2025-01-18 19:25:43,028 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:43,028 - DEBUG - Cache Entry: (0, 1737249938416072, 0)
+2025-01-18 19:25:43,028 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249938416072, 'priority': 0, 'context': {'base64Data': 'CNrjJA=='}}]}
+2025-01-18 19:25:43,028 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[22], is_file_transfer=[False]
+2025-01-18 19:25:43,028 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:43,029 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:43,029 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:43,029 - DEBUG - Request guid: f945c489-f13f-4ec3-b3ea-1ef53ac8316b
+2025-01-18 19:25:43,029 - DEBUG - socket timeout: 60
+2025-01-18 19:25:43,121 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=10fb0f3d-67b3-4803-95c6-0f0548ed25b8&request_guid=f945c489-f13f-4ec3-b3ea-1ef53ac8316b HTTP/1.1" 200 2617
+2025-01-18 19:25:43,121 - DEBUG - SUCCESS
+2025-01-18 19:25:43,122 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:43,122 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:43,122 - DEBUG - Query id: 01b9ce35-0002-4c7a-0007-08ea001ff8f2
+2025-01-18 19:25:43,122 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249938509300, 'priority': 0, 'context': 'COrjJA=='}]}
+2025-01-18 19:25:43,122 - DEBUG - Cache Entry: (0, 1737249938416072, 0)
+2025-01-18 19:25:43,122 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249938509300, 'priority': 0, 'context': 'COrjJA=='}
+2025-01-18 19:25:43,122 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:43,122 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:43,122 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:43,122 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:43,123 - DEBUG - Cache Entry: (0, 1737249938509300, 0)
+2025-01-18 19:25:43,123 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:43,123 - DEBUG - sfqid: 01b9ce35-0002-4c7a-0007-08ea001ff8f2
+2025-01-18 19:25:43,123 - DEBUG - query execution done
+2025-01-18 19:25:43,123 - DEBUG - SUCCESS
+2025-01-18 19:25:43,123 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:43,123 - DEBUG - Query result format: arrow
+2025-01-18 19:25:43,123 - INFO - Number of results in first chunk: 54
+2025-01-18 19:25:43,123 - DEBUG - Execute query [queryID: 01b9ce35-0002-4c7a-0007-08ea001ff8f2]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:25:43,123 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:25:43,123 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:25:43,123 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:25:43,123 - DEBUG - Batches read: 0
+2025-01-18 19:25:43,123 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:25:43,123 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:25:43,893 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:25:43,893 - INFO - Querying the server for client info
+2025-01-18 19:25:43,893 - DEBUG - cursor
+2025-01-18 19:25:43,893 - DEBUG - executing SQL/command
+2025-01-18 19:25:43,893 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:25:43,893 - DEBUG - sequence counter: 23
+2025-01-18 19:25:43,894 - DEBUG - Request id: 3d13409c-54e3-46a1-a409-93363cb418dd
+2025-01-18 19:25:43,894 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:25:43,894 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:43,894 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:43,894 - DEBUG - _cmd_query
+2025-01-18 19:25:43,894 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:43,894 - DEBUG - Cache Entry: (0, 1737249938509300, 0)
+2025-01-18 19:25:43,894 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249938509300, 'priority': 0, 'context': {'base64Data': 'COrjJA=='}}]}
+2025-01-18 19:25:43,894 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[23], is_file_transfer=[False]
+2025-01-18 19:25:43,895 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:43,895 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:43,895 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:43,895 - DEBUG - Request guid: 0f2ba5e3-f4cb-49cc-9e98-e40b8e53f493
+2025-01-18 19:25:43,895 - DEBUG - socket timeout: 60
+2025-01-18 19:25:44,002 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=3d13409c-54e3-46a1-a409-93363cb418dd&request_guid=0f2ba5e3-f4cb-49cc-9e98-e40b8e53f493 HTTP/1.1" 200 2619
+2025-01-18 19:25:44,003 - DEBUG - SUCCESS
+2025-01-18 19:25:44,003 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:44,003 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:44,003 - DEBUG - Query id: 01b9ce35-0002-4c77-0007-08ea001fdfa2
+2025-01-18 19:25:44,003 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249939396175, 'priority': 0, 'context': 'CN7jJA=='}]}
+2025-01-18 19:25:44,003 - DEBUG - Cache Entry: (0, 1737249938509300, 0)
+2025-01-18 19:25:44,003 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249939396175, 'priority': 0, 'context': 'CN7jJA=='}
+2025-01-18 19:25:44,003 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:44,003 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,003 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,003 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:44,003 - DEBUG - Cache Entry: (0, 1737249939396175, 0)
+2025-01-18 19:25:44,003 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,003 - DEBUG - sfqid: 01b9ce35-0002-4c77-0007-08ea001fdfa2
+2025-01-18 19:25:44,003 - DEBUG - query execution done
+2025-01-18 19:25:44,004 - DEBUG - SUCCESS
+2025-01-18 19:25:44,004 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:44,004 - DEBUG - Query result format: arrow
+2025-01-18 19:25:44,004 - INFO - Number of results in first chunk: 1
+2025-01-18 19:25:44,004 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:25:44,004 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:25:44,004 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:25:44,004 - DEBUG - Batches read: 0
+2025-01-18 19:25:44,004 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:25:44,004 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:25:44,004 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:25:44,004 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:25:44,004 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:25:44,004 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:25:44,004 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:25:44,008 - DEBUG - cursor
+2025-01-18 19:25:44,009 - DEBUG - executing SQL/command
+2025-01-18 19:25:44,009 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:25:44,009 - DEBUG - sequence counter: 24
+2025-01-18 19:25:44,009 - DEBUG - Request id: ce1363df-ec35-4483-a8bc-904c7e4cd726
+2025-01-18 19:25:44,009 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:25:44,009 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:44,009 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,009 - DEBUG - _cmd_query
+2025-01-18 19:25:44,009 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:44,010 - DEBUG - Cache Entry: (0, 1737249939396175, 0)
+2025-01-18 19:25:44,010 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249939396175, 'priority': 0, 'context': {'base64Data': 'CN7jJA=='}}]}
+2025-01-18 19:25:44,010 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[24], is_file_transfer=[False]
+2025-01-18 19:25:44,011 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:44,011 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:44,011 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:44,011 - DEBUG - Request guid: fe454b00-1e66-495d-b6c9-cc83086d364d
+2025-01-18 19:25:44,011 - DEBUG - socket timeout: 60
+2025-01-18 19:25:44,079 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=ce1363df-ec35-4483-a8bc-904c7e4cd726&request_guid=fe454b00-1e66-495d-b6c9-cc83086d364d HTTP/1.1" 200 1499
+2025-01-18 19:25:44,079 - DEBUG - SUCCESS
+2025-01-18 19:25:44,079 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:44,080 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:44,080 - DEBUG - Query id: 01b9ce35-0002-4c79-0007-08ea00200426
+2025-01-18 19:25:44,080 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249939465370, 'priority': 0, 'context': 'CObjJA=='}]}
+2025-01-18 19:25:44,080 - DEBUG - Cache Entry: (0, 1737249939396175, 0)
+2025-01-18 19:25:44,080 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249939465370, 'priority': 0, 'context': 'CObjJA=='}
+2025-01-18 19:25:44,080 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:44,080 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,080 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,080 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:44,080 - DEBUG - Cache Entry: (0, 1737249939465370, 0)
+2025-01-18 19:25:44,080 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,080 - DEBUG - sfqid: 01b9ce35-0002-4c79-0007-08ea00200426
+2025-01-18 19:25:44,080 - DEBUG - query execution done
+2025-01-18 19:25:44,080 - DEBUG - SUCCESS
+2025-01-18 19:25:44,080 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:44,080 - DEBUG - Query result format: arrow
+2025-01-18 19:25:44,080 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:44,082 - DEBUG - executing SQL/command
+2025-01-18 19:25:44,082 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:25:44,082 - DEBUG - sequence counter: 25
+2025-01-18 19:25:44,082 - DEBUG - Request id: 85148740-081d-4570-8b18-2e6357e549c0
+2025-01-18 19:25:44,082 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:25:44,082 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:44,082 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,082 - DEBUG - _cmd_query
+2025-01-18 19:25:44,082 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:44,082 - DEBUG - Cache Entry: (0, 1737249939465370, 0)
+2025-01-18 19:25:44,082 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249939465370, 'priority': 0, 'context': {'base64Data': 'CObjJA=='}}]}
+2025-01-18 19:25:44,082 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[25], is_file_transfer=[False]
+2025-01-18 19:25:44,083 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:44,083 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:44,083 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:44,083 - DEBUG - Request guid: 6100e371-12cc-48c1-a2d9-f124c9dc4d39
+2025-01-18 19:25:44,083 - DEBUG - socket timeout: 60
+2025-01-18 19:25:44,147 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=85148740-081d-4570-8b18-2e6357e549c0&request_guid=6100e371-12cc-48c1-a2d9-f124c9dc4d39 HTTP/1.1" 200 1374
+2025-01-18 19:25:44,148 - DEBUG - SUCCESS
+2025-01-18 19:25:44,148 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:44,148 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:44,148 - DEBUG - Query id: 01b9ce35-0002-4c77-0007-08ea001fdfa6
+2025-01-18 19:25:44,148 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249939521948, 'priority': 0, 'context': 'CN7jJA=='}]}
+2025-01-18 19:25:44,148 - DEBUG - Cache Entry: (0, 1737249939465370, 0)
+2025-01-18 19:25:44,148 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249939521948, 'priority': 0, 'context': 'CN7jJA=='}
+2025-01-18 19:25:44,148 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:44,148 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,148 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,148 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:44,148 - DEBUG - Cache Entry: (0, 1737249939521948, 0)
+2025-01-18 19:25:44,148 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,148 - DEBUG - sfqid: 01b9ce35-0002-4c77-0007-08ea001fdfa6
+2025-01-18 19:25:44,148 - DEBUG - query execution done
+2025-01-18 19:25:44,148 - DEBUG - SUCCESS
+2025-01-18 19:25:44,148 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:44,148 - DEBUG - Query result format: arrow
+2025-01-18 19:25:44,149 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:44,149 - DEBUG - executing SQL/command
+2025-01-18 19:25:44,149 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:25:44,149 - DEBUG - sequence counter: 26
+2025-01-18 19:25:44,149 - DEBUG - Request id: 6b5dacd6-d7d2-41bb-a922-f8616e19d525
+2025-01-18 19:25:44,149 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:25:44,149 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:44,150 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,150 - DEBUG - _cmd_query
+2025-01-18 19:25:44,150 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:44,150 - DEBUG - Cache Entry: (0, 1737249939521948, 0)
+2025-01-18 19:25:44,150 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249939521948, 'priority': 0, 'context': {'base64Data': 'CN7jJA=='}}]}
+2025-01-18 19:25:44,150 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[26], is_file_transfer=[False]
+2025-01-18 19:25:44,150 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:44,151 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:44,151 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:44,151 - DEBUG - Request guid: 1301e0d5-598b-4c39-ad6c-ddc33a8c4075
+2025-01-18 19:25:44,151 - DEBUG - socket timeout: 60
+2025-01-18 19:25:44,220 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=6b5dacd6-d7d2-41bb-a922-f8616e19d525&request_guid=1301e0d5-598b-4c39-ad6c-ddc33a8c4075 HTTP/1.1" 200 1373
+2025-01-18 19:25:44,221 - DEBUG - SUCCESS
+2025-01-18 19:25:44,221 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:44,221 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:44,221 - DEBUG - Query id: 01b9ce35-0002-4c70-0007-08ea002041ae
+2025-01-18 19:25:44,221 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249939602636, 'priority': 0, 'context': 'CMLjJA=='}]}
+2025-01-18 19:25:44,221 - DEBUG - Cache Entry: (0, 1737249939521948, 0)
+2025-01-18 19:25:44,221 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249939602636, 'priority': 0, 'context': 'CMLjJA=='}
+2025-01-18 19:25:44,221 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:44,221 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,221 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,221 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:44,221 - DEBUG - Cache Entry: (0, 1737249939602636, 0)
+2025-01-18 19:25:44,221 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,221 - DEBUG - sfqid: 01b9ce35-0002-4c70-0007-08ea002041ae
+2025-01-18 19:25:44,221 - DEBUG - query execution done
+2025-01-18 19:25:44,221 - DEBUG - SUCCESS
+2025-01-18 19:25:44,221 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:44,221 - DEBUG - Query result format: arrow
+2025-01-18 19:25:44,221 - INFO - Number of results in first chunk: 0
+2025-01-18 19:25:44,222 - DEBUG - executing SQL/command
+2025-01-18 19:25:44,222 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:25:44,222 - DEBUG - sequence counter: 27
+2025-01-18 19:25:44,222 - DEBUG - Request id: fd0e9dc5-4870-4ab9-8300-65561f9c8716
+2025-01-18 19:25:44,222 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:25:44,222 - DEBUG - is_file_transfer: True
+2025-01-18 19:25:44,222 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,222 - DEBUG - _cmd_query
+2025-01-18 19:25:44,222 - DEBUG - serialize_to_dict() called
+2025-01-18 19:25:44,222 - DEBUG - Cache Entry: (0, 1737249939602636, 0)
+2025-01-18 19:25:44,223 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249939602636, 'priority': 0, 'context': {'base64Data': 'CMLjJA=='}}]}
+2025-01-18 19:25:44,223 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[27], is_file_transfer=[False]
+2025-01-18 19:25:44,223 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:25:44,223 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:25:44,223 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:25:44,224 - DEBUG - Request guid: ebdd5a21-8b6d-4464-8fbb-6076c2f7731b
+2025-01-18 19:25:44,224 - DEBUG - socket timeout: 60
+2025-01-18 19:25:44,363 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=fd0e9dc5-4870-4ab9-8300-65561f9c8716&request_guid=ebdd5a21-8b6d-4464-8fbb-6076c2f7731b HTTP/1.1" 200 2619
+2025-01-18 19:25:44,364 - DEBUG - SUCCESS
+2025-01-18 19:25:44,364 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:25:44,364 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:25:44,364 - DEBUG - Query id: 01b9ce35-0002-4c78-0007-08ea002013b2
+2025-01-18 19:25:44,364 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249939756507, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:25:44,364 - DEBUG - Cache Entry: (0, 1737249939602636, 0)
+2025-01-18 19:25:44,364 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249939756507, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:25:44,364 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:25:44,364 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,364 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:25:44,364 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:25:44,364 - DEBUG - Cache Entry: (0, 1737249939756507, 0)
+2025-01-18 19:25:44,364 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:25:44,365 - DEBUG - sfqid: 01b9ce35-0002-4c78-0007-08ea002013b2
+2025-01-18 19:25:44,365 - DEBUG - query execution done
+2025-01-18 19:25:44,365 - DEBUG - SUCCESS
+2025-01-18 19:25:44,365 - DEBUG - PUT OR GET: False
+2025-01-18 19:25:44,365 - DEBUG - Query result format: arrow
+2025-01-18 19:25:44,365 - INFO - Number of results in first chunk: 54
+2025-01-18 19:25:44,365 - DEBUG - Execute query [queryID: 01b9ce35-0002-4c78-0007-08ea002013b2]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:25:44,365 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:25:44,365 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:25:44,365 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:25:44,365 - DEBUG - Batches read: 0
+2025-01-18 19:25:44,365 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:25:44,365 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:26:24,480 - INFO - New root object was created for <snowflake.snowpark.session.Session object at 0x0000013B301D3520>
+2025-01-18 19:26:24,481 - INFO - Querying the server for client info
+2025-01-18 19:26:24,481 - DEBUG - cursor
+2025-01-18 19:26:24,481 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,481 - DEBUG - query: [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:26:24,481 - DEBUG - sequence counter: 28
+2025-01-18 19:26:24,481 - DEBUG - Request id: 6d4ac9b4-1e73-442e-82e1-b31eed5d3696
+2025-01-18 19:26:24,481 - DEBUG - running query [SELECT SYSTEM$CLIENT_VERSION_INFO()]
+2025-01-18 19:26:24,481 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,481 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,481 - DEBUG - _cmd_query
+2025-01-18 19:26:24,481 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,481 - DEBUG - Cache Entry: (0, 1737249939756507, 0)
+2025-01-18 19:26:24,481 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249939756507, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:26:24,481 - DEBUG - sql=[SELECT SYSTEM$CLIENT_VERSION_INFO()], sequence_id=[28], is_file_transfer=[False]
+2025-01-18 19:26:24,482 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,483 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,483 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,483 - DEBUG - Request guid: c8514fa8-7b47-405a-9976-73f2e4b3bba7
+2025-01-18 19:26:24,483 - DEBUG - socket timeout: 60
+2025-01-18 19:26:24,598 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=6d4ac9b4-1e73-442e-82e1-b31eed5d3696&request_guid=c8514fa8-7b47-405a-9976-73f2e4b3bba7 HTTP/1.1" 200 2618
+2025-01-18 19:26:24,599 - DEBUG - SUCCESS
+2025-01-18 19:26:24,599 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:24,599 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:24,599 - DEBUG - Query id: 01b9ce36-0002-4c71-0007-08ea00202366
+2025-01-18 19:26:24,599 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249979977855, 'priority': 0, 'context': 'CMbjJA=='}]}
+2025-01-18 19:26:24,599 - DEBUG - Cache Entry: (0, 1737249939756507, 0)
+2025-01-18 19:26:24,599 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249979977855, 'priority': 0, 'context': 'CMbjJA=='}
+2025-01-18 19:26:24,599 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:24,599 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,600 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,600 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:24,600 - DEBUG - Cache Entry: (0, 1737249979977855, 0)
+2025-01-18 19:26:24,600 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,600 - DEBUG - sfqid: 01b9ce36-0002-4c71-0007-08ea00202366
+2025-01-18 19:26:24,600 - DEBUG - query execution done
+2025-01-18 19:26:24,600 - DEBUG - SUCCESS
+2025-01-18 19:26:24,600 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:24,600 - DEBUG - Query result format: arrow
+2025-01-18 19:26:24,600 - INFO - Number of results in first chunk: 1
+2025-01-18 19:26:24,600 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:26:24,600 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:26:24,600 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:26:24,600 - DEBUG - Batches read: 0
+2025-01-18 19:26:24,600 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:26:24,601 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:26:24,601 - INFO - telemetry client created for <snowflake.connector.connection.SnowflakeConnection object at 0x0000013B2FF36A10>, telemetry enabled: True
+2025-01-18 19:26:24,601 - INFO - Snowflake Core version: 1.0.2, on Python 3.10.11, on platform: Windows-10-10.0.22635-SP0
+2025-01-18 19:26:24,601 - INFO - Parameter PARAM_USE_CLIENT_RETRY: None
+2025-01-18 19:26:24,601 - INFO - Parameter PARAM_PRINT_VERBOSE_STACK_TRACE: None
+2025-01-18 19:26:24,601 - INFO - Parameter PARAM_FIX_HOSTNAME: true
+2025-01-18 19:26:24,604 - DEBUG - cursor
+2025-01-18 19:26:24,604 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,604 - DEBUG - query: [SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...]
+2025-01-18 19:26:24,604 - DEBUG - sequence counter: 29
+2025-01-18 19:26:24,604 - DEBUG - Request id: db5093cf-81a7-476a-9cac-a5e7b6937546
+2025-01-18 19:26:24,604 - DEBUG - running query [SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...]
+2025-01-18 19:26:24,604 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,605 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,605 - DEBUG - _cmd_query
+2025-01-18 19:26:24,605 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,605 - DEBUG - Cache Entry: (0, 1737249979977855, 0)
+2025-01-18 19:26:24,605 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249979977855, 'priority': 0, 'context': {'base64Data': 'CMbjJA=='}}]}
+2025-01-18 19:26:24,605 - DEBUG - sql=[SELECT LOCATION, LATITUDE, LONGITUDE FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS WH...], sequence_id=[29], is_file_transfer=[False]
+2025-01-18 19:26:24,606 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,606 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,606 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,607 - DEBUG - Request guid: 3a35dff5-4d47-4968-a956-601f105e9aad
+2025-01-18 19:26:24,607 - DEBUG - socket timeout: 60
+2025-01-18 19:26:24,739 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=db5093cf-81a7-476a-9cac-a5e7b6937546&request_guid=3a35dff5-4d47-4968-a956-601f105e9aad HTTP/1.1" 200 2113
+2025-01-18 19:26:24,740 - DEBUG - SUCCESS
+2025-01-18 19:26:24,740 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:24,741 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:24,741 - DEBUG - Query id: 01b9ce36-0002-4c79-0007-08ea00200432
+2025-01-18 19:26:24,741 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249980090549, 'priority': 0, 'context': 'CObjJA=='}]}
+2025-01-18 19:26:24,741 - DEBUG - Cache Entry: (0, 1737249979977855, 0)
+2025-01-18 19:26:24,741 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249980090549, 'priority': 0, 'context': 'CObjJA=='}
+2025-01-18 19:26:24,741 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:24,741 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,741 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,741 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:24,741 - DEBUG - Cache Entry: (0, 1737249980090549, 0)
+2025-01-18 19:26:24,741 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,741 - DEBUG - sfqid: 01b9ce36-0002-4c79-0007-08ea00200432
+2025-01-18 19:26:24,742 - DEBUG - query execution done
+2025-01-18 19:26:24,742 - DEBUG - SUCCESS
+2025-01-18 19:26:24,742 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:24,742 - DEBUG - Query result format: arrow
+2025-01-18 19:26:24,742 - INFO - Number of results in first chunk: 1
+2025-01-18 19:26:24,742 - DEBUG - Execute query [queryID: 01b9ce36-0002-4c79-0007-08ea00200432] 
+        SELECT LOCATION, LATITUDE, LONGITUDE
+        FROM DEV_DP_APP.APP_ASSETS.USER_SETTINGS 
+        WHERE USER_ID = 'default_user'
+        
+2025-01-18 19:26:24,742 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:26:24,742 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:26:24,742 - DEBUG - Arrow chunk info: batchCount 1, columnCount 3, use_numpy: 0
+2025-01-18 19:26:24,742 - DEBUG - Batches read: 0
+2025-01-18 19:26:24,743 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:26:24,743 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:26:24,748 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,748 - DEBUG - query: [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:26:24,748 - DEBUG - sequence counter: 30
+2025-01-18 19:26:24,749 - DEBUG - Request id: cf951adc-9dfb-42cd-83e8-0d69b7cbac51
+2025-01-18 19:26:24,749 - DEBUG - running query [SELECT  *  FROM DOCS_CHUNKS_TABLE]
+2025-01-18 19:26:24,749 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,749 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,749 - DEBUG - _cmd_query
+2025-01-18 19:26:24,749 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,749 - DEBUG - Cache Entry: (0, 1737249980090549, 0)
+2025-01-18 19:26:24,749 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249980090549, 'priority': 0, 'context': {'base64Data': 'CObjJA=='}}]}
+2025-01-18 19:26:24,749 - DEBUG - sql=[SELECT  *  FROM DOCS_CHUNKS_TABLE], sequence_id=[30], is_file_transfer=[False]
+2025-01-18 19:26:24,751 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,751 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,751 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,751 - DEBUG - Request guid: c7ced63c-ab3c-4060-baed-e1eb4a119912
+2025-01-18 19:26:24,751 - DEBUG - socket timeout: 60
+2025-01-18 19:26:24,813 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=cf951adc-9dfb-42cd-83e8-0d69b7cbac51&request_guid=c7ced63c-ab3c-4060-baed-e1eb4a119912 HTTP/1.1" 200 1503
+2025-01-18 19:26:24,813 - DEBUG - SUCCESS
+2025-01-18 19:26:24,814 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:24,814 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:24,814 - DEBUG - Query id: 01b9ce36-0002-4c5d-0007-08ea0020605e
+2025-01-18 19:26:24,814 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249980200436, 'priority': 0, 'context': 'CPbiJA=='}]}
+2025-01-18 19:26:24,814 - DEBUG - Cache Entry: (0, 1737249980090549, 0)
+2025-01-18 19:26:24,814 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249980200436, 'priority': 0, 'context': 'CPbiJA=='}
+2025-01-18 19:26:24,814 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:24,814 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,814 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,814 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:24,814 - DEBUG - Cache Entry: (0, 1737249980200436, 0)
+2025-01-18 19:26:24,814 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,815 - DEBUG - sfqid: 01b9ce36-0002-4c5d-0007-08ea0020605e
+2025-01-18 19:26:24,815 - DEBUG - query execution done
+2025-01-18 19:26:24,815 - DEBUG - SUCCESS
+2025-01-18 19:26:24,815 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:24,815 - DEBUG - Query result format: arrow
+2025-01-18 19:26:24,815 - INFO - Number of results in first chunk: 0
+2025-01-18 19:26:24,816 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,816 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:26:24,816 - DEBUG - sequence counter: 31
+2025-01-18 19:26:24,817 - DEBUG - Request id: 9605a2fc-c33d-4791-87a4-a7e401c953eb
+2025-01-18 19:26:24,817 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)]
+2025-01-18 19:26:24,817 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,817 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,817 - DEBUG - _cmd_query
+2025-01-18 19:26:24,817 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,817 - DEBUG - Cache Entry: (0, 1737249980200436, 0)
+2025-01-18 19:26:24,817 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249980200436, 'priority': 0, 'context': {'base64Data': 'CPbiJA=='}}]}
+2025-01-18 19:26:24,817 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)], sequence_id=[31], is_file_transfer=[False]
+2025-01-18 19:26:24,818 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,819 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,819 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,819 - DEBUG - Request guid: 61e73374-eb0d-409e-bd93-d2155dfa7e59
+2025-01-18 19:26:24,819 - DEBUG - socket timeout: 60
+2025-01-18 19:26:24,881 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=9605a2fc-c33d-4791-87a4-a7e401c953eb&request_guid=61e73374-eb0d-409e-bd93-d2155dfa7e59 HTTP/1.1" 200 1374
+2025-01-18 19:26:24,882 - DEBUG - SUCCESS
+2025-01-18 19:26:24,882 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:24,882 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:24,882 - DEBUG - Query id: 01b9ce36-0002-4c5d-0007-08ea00206062
+2025-01-18 19:26:24,882 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249980275487, 'priority': 0, 'context': 'CPbiJA=='}]}
+2025-01-18 19:26:24,882 - DEBUG - Cache Entry: (0, 1737249980200436, 0)
+2025-01-18 19:26:24,882 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249980275487, 'priority': 0, 'context': 'CPbiJA=='}
+2025-01-18 19:26:24,883 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:24,883 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,883 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,883 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:24,883 - DEBUG - Cache Entry: (0, 1737249980275487, 0)
+2025-01-18 19:26:24,883 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,883 - DEBUG - sfqid: 01b9ce36-0002-4c5d-0007-08ea00206062
+2025-01-18 19:26:24,883 - DEBUG - query execution done
+2025-01-18 19:26:24,883 - DEBUG - SUCCESS
+2025-01-18 19:26:24,883 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:24,883 - DEBUG - Query result format: arrow
+2025-01-18 19:26:24,883 - INFO - Number of results in first chunk: 0
+2025-01-18 19:26:24,884 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,884 - DEBUG - query: [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:26:24,884 - DEBUG - sequence counter: 32
+2025-01-18 19:26:24,884 - DEBUG - Request id: 2bb439a0-6574-491a-8530-e9897eb291de
+2025-01-18 19:26:24,884 - DEBUG - running query [SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...]
+2025-01-18 19:26:24,884 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,884 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,884 - DEBUG - _cmd_query
+2025-01-18 19:26:24,884 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,884 - DEBUG - Cache Entry: (0, 1737249980275487, 0)
+2025-01-18 19:26:24,884 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249980275487, 'priority': 0, 'context': {'base64Data': 'CPbiJA=='}}]}
+2025-01-18 19:26:24,885 - DEBUG - sql=[SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHU...], sequence_id=[32], is_file_transfer=[False]
+2025-01-18 19:26:24,886 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,886 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,886 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,886 - DEBUG - Request guid: 1c3e3a5b-709d-4da4-9a26-ee2b17f17c45
+2025-01-18 19:26:24,886 - DEBUG - socket timeout: 60
+2025-01-18 19:26:24,960 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=2bb439a0-6574-491a-8530-e9897eb291de&request_guid=1c3e3a5b-709d-4da4-9a26-ee2b17f17c45 HTTP/1.1" 200 1374
+2025-01-18 19:26:24,961 - DEBUG - SUCCESS
+2025-01-18 19:26:24,961 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:24,961 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:24,961 - DEBUG - Query id: 01b9ce36-0002-4c78-0007-08ea002013ba
+2025-01-18 19:26:24,961 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249980354848, 'priority': 0, 'context': 'COLjJA=='}]}
+2025-01-18 19:26:24,961 - DEBUG - Cache Entry: (0, 1737249980275487, 0)
+2025-01-18 19:26:24,961 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249980354848, 'priority': 0, 'context': 'COLjJA=='}
+2025-01-18 19:26:24,961 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:24,961 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,961 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:24,961 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:24,961 - DEBUG - Cache Entry: (0, 1737249980354848, 0)
+2025-01-18 19:26:24,961 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,961 - DEBUG - sfqid: 01b9ce36-0002-4c78-0007-08ea002013ba
+2025-01-18 19:26:24,961 - DEBUG - query execution done
+2025-01-18 19:26:24,961 - DEBUG - SUCCESS
+2025-01-18 19:26:24,962 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:24,962 - DEBUG - Query result format: arrow
+2025-01-18 19:26:24,962 - INFO - Number of results in first chunk: 0
+2025-01-18 19:26:24,962 - DEBUG - executing SQL/command
+2025-01-18 19:26:24,962 - DEBUG - query: [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:26:24,962 - DEBUG - sequence counter: 33
+2025-01-18 19:26:24,962 - DEBUG - Request id: 5d683d51-1c25-478b-a10d-642216f491bb
+2025-01-18 19:26:24,963 - DEBUG - running query [SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...]
+2025-01-18 19:26:24,963 - DEBUG - is_file_transfer: True
+2025-01-18 19:26:24,963 - DEBUG - Failed to set SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:24,963 - DEBUG - _cmd_query
+2025-01-18 19:26:24,963 - DEBUG - serialize_to_dict() called
+2025-01-18 19:26:24,963 - DEBUG - Cache Entry: (0, 1737249980354848, 0)
+2025-01-18 19:26:24,963 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249980354848, 'priority': 0, 'context': {'base64Data': 'COLjJA=='}}]}
+2025-01-18 19:26:24,963 - DEBUG - sql=[SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHU...], sequence_id=[33], is_file_transfer=[False]
+2025-01-18 19:26:24,964 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:26:24,964 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:26:24,964 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:26:24,964 - DEBUG - Request guid: 50eb5898-4350-44a9-a12e-7f75db92b827
+2025-01-18 19:26:24,964 - DEBUG - socket timeout: 60
+2025-01-18 19:26:25,078 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=5d683d51-1c25-478b-a10d-642216f491bb&request_guid=50eb5898-4350-44a9-a12e-7f75db92b827 HTTP/1.1" 200 2616
+2025-01-18 19:26:25,078 - DEBUG - SUCCESS
+2025-01-18 19:26:25,078 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:26:25,078 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:26:25,078 - DEBUG - Query id: 01b9ce36-0002-4c76-0007-08ea0020515a
+2025-01-18 19:26:25,078 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737249980468741, 'priority': 0, 'context': 'CNrjJA=='}]}
+2025-01-18 19:26:25,078 - DEBUG - Cache Entry: (0, 1737249980354848, 0)
+2025-01-18 19:26:25,078 - DEBUG - deserialize {'id': 0, 'timestamp': 1737249980468741, 'priority': 0, 'context': 'CNrjJA=='}
+2025-01-18 19:26:25,079 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:26:25,079 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:25,079 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:26:25,079 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:26:25,079 - DEBUG - Cache Entry: (0, 1737249980468741, 0)
+2025-01-18 19:26:25,079 - DEBUG - Failed to reset SIGINT handler. Not in main thread. Ignored...
+2025-01-18 19:26:25,079 - DEBUG - sfqid: 01b9ce36-0002-4c76-0007-08ea0020515a
+2025-01-18 19:26:25,079 - DEBUG - query execution done
+2025-01-18 19:26:25,079 - DEBUG - SUCCESS
+2025-01-18 19:26:25,079 - DEBUG - PUT OR GET: False
+2025-01-18 19:26:25,079 - DEBUG - Query result format: arrow
+2025-01-18 19:26:25,079 - INFO - Number of results in first chunk: 54
+2025-01-18 19:26:25,079 - DEBUG - Execute query [queryID: 01b9ce36-0002-4c76-0007-08ea0020515a]  SELECT  *  FROM ( SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM DOCS_CHUNKS_TABLE) GROUP BY "PRODUCTNAME") ORDER BY "PRODUCTNAME" ASC NULLS FIRST
+2025-01-18 19:26:25,079 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:26:25,079 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:26:25,079 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:26:25,079 - DEBUG - Batches read: 0
+2025-01-18 19:26:25,080 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:26:25,080 - DEBUG - Current batch index: 0, rows in current batch: 54
+2025-01-18 19:35:47,622 - INFO - Closing session: 1980125954395262
+2025-01-18 19:35:47,622 - INFO - Canceling all running queries
+2025-01-18 19:35:47,622 - DEBUG - cursor
+2025-01-18 19:35:47,623 - DEBUG - executing SQL/command
+2025-01-18 19:35:47,623 - DEBUG - query: [select system$cancel_all_queries(1980125954395262)]
+2025-01-18 19:35:47,623 - DEBUG - sequence counter: 34
+2025-01-18 19:35:47,623 - DEBUG - Request id: b9fb51e5-d44a-44cd-b62f-d486ff74f669
+2025-01-18 19:35:47,623 - DEBUG - running query [select system$cancel_all_queries(1980125954395262)]
+2025-01-18 19:35:47,623 - DEBUG - is_file_transfer: True
+2025-01-18 19:35:47,623 - DEBUG - _cmd_query
+2025-01-18 19:35:47,623 - DEBUG - serialize_to_dict() called
+2025-01-18 19:35:47,623 - DEBUG - Cache Entry: (0, 1737249980468741, 0)
+2025-01-18 19:35:47,623 - DEBUG - serialize_to_dict(): data to send to server {'entries': [{'id': 0, 'timestamp': 1737249980468741, 'priority': 0, 'context': {'base64Data': 'CNrjJA=='}}]}
+2025-01-18 19:35:47,624 - DEBUG - sql=[select system$cancel_all_queries(1980125954395262)], sequence_id=[34], is_file_transfer=[False]
+2025-01-18 19:35:47,624 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:35:47,624 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:35:47,624 - DEBUG - remaining request timeout: N/A ms, retry cnt: 1
+2025-01-18 19:35:47,625 - DEBUG - Request guid: bbf88a5c-36fb-4526-ada7-a3005e31f9a4
+2025-01-18 19:35:47,625 - DEBUG - socket timeout: 60
+2025-01-18 19:35:47,625 - DEBUG - Resetting dropped connection: gmcpdcz-mt01740.snowflakecomputing.com
+2025-01-18 19:35:48,029 - DEBUG - OCSP Mode: FAIL_OPEN, OCSP response cache file name: None
+2025-01-18 19:35:48,029 - DEBUG - ocsp_response_cache_uri: file://C:/Users/ajjay/AppData/Local/Snowflake/Caches/ocsp_response_cache.json
+2025-01-18 19:35:48,029 - DEBUG - OCSP_VALIDATION_CACHE size: 310
+2025-01-18 19:35:48,029 - DEBUG - OCSP response cache server is enabled: http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+2025-01-18 19:35:48,029 - DEBUG - OCSP dynamic cache server RETRY URL: None
+2025-01-18 19:35:48,029 - DEBUG - validating certificate: gmcpdcz-mt01740.snowflakecomputing.com
+2025-01-18 19:35:48,029 - DEBUG - # of certificates: 4
+2025-01-18 19:35:48,029 - DEBUG - subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:35:48,030 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:35:48,030 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')]), issuer: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:35:48,030 - DEBUG - subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:35:48,032 - DEBUG - not found issuer_der: OrderedDict([('country_name', 'US'), ('organization_name', 'Starfield Technologies, Inc.'), ('organizational_unit_name', 'Starfield Class 2 Certification Authority')])
+2025-01-18 19:35:48,033 - DEBUG - hit cache for subject: OrderedDict([('common_name', '*.us-east-2.snowflakecomputing.com')])
+2025-01-18 19:35:48,034 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:35:48,034 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon RSA 2048 M02')])
+2025-01-18 19:35:48,035 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+2025-01-18 19:35:48,035 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'Amazon'), ('common_name', 'Amazon Root CA 1')])
+2025-01-18 19:35:48,036 - DEBUG - Verifying the attached certificate is signed by the issuer. Valid Not After: 2025-05-07 12:00:00+00:00
+2025-01-18 19:35:48,037 - DEBUG - hit cache for subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'Arizona'), ('locality_name', 'Scottsdale'), ('organization_name', 'Starfield Technologies, Inc.'), ('common_name', 'Starfield Services Root Certificate Authority - G2')])
+2025-01-18 19:35:48,038 - DEBUG - ok
+2025-01-18 19:35:48,176 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=b9fb51e5-d44a-44cd-b62f-d486ff74f669&request_guid=bbf88a5c-36fb-4526-ada7-a3005e31f9a4 HTTP/1.1" 200 1761
+2025-01-18 19:35:48,176 - DEBUG - SUCCESS
+2025-01-18 19:35:48,176 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:35:48,176 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:35:48,176 - DEBUG - Query id: 01b9ce3f-0002-4c72-0007-08ea002032b2
+2025-01-18 19:35:48,176 - DEBUG - deserialize_json_dict() called: data from server: {'entries': [{'id': 0, 'timestamp': 1737250543548339, 'priority': 0, 'context': 'CMrjJA=='}]}
+2025-01-18 19:35:48,176 - DEBUG - Cache Entry: (0, 1737249980468741, 0)
+2025-01-18 19:35:48,177 - DEBUG - deserialize {'id': 0, 'timestamp': 1737250543548339, 'priority': 0, 'context': 'CMrjJA=='}
+2025-01-18 19:35:48,177 - DEBUG - sync_priority_map called priority_map size = 0, new_priority_map size = 1
+2025-01-18 19:35:48,177 - DEBUG - trim_cache() called. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:35:48,177 - DEBUG - trim_cache() returns. treeSet size is 1 and cache capacity is 5
+2025-01-18 19:35:48,177 - DEBUG - deserialize_json_dict() returns
+2025-01-18 19:35:48,177 - DEBUG - Cache Entry: (0, 1737250543548339, 0)
+2025-01-18 19:35:48,177 - DEBUG - sfqid: 01b9ce3f-0002-4c72-0007-08ea002032b2
+2025-01-18 19:35:48,177 - DEBUG - query execution done
+2025-01-18 19:35:48,178 - DEBUG - SUCCESS
+2025-01-18 19:35:48,178 - DEBUG - PUT OR GET: False
+2025-01-18 19:35:48,178 - DEBUG - Query result format: arrow
+2025-01-18 19:35:48,178 - INFO - Number of results in first chunk: 1
+2025-01-18 19:35:48,178 - DEBUG - Execute query [queryID: 01b9ce3f-0002-4c72-0007-08ea002032b2] select system$cancel_all_queries(1980125954395262)
+2025-01-18 19:35:48,178 - DEBUG - Using nanoarrow as the arrow data converter
+2025-01-18 19:35:48,178 - DEBUG - Arrow BatchSize: 1
+2025-01-18 19:35:48,178 - DEBUG - Arrow chunk info: batchCount 1, columnCount 1, use_numpy: 0
+2025-01-18 19:35:48,178 - DEBUG - Batches read: 0
+2025-01-18 19:35:48,179 - DEBUG - beginning to schedule result batch downloads
+2025-01-18 19:35:48,179 - DEBUG - Current batch index: 0, rows in current batch: 1
+2025-01-18 19:35:48,179 - INFO - closed
+2025-01-18 19:35:48,179 - DEBUG - Closing telemetry client.
+2025-01-18 19:35:48,186 - DEBUG - Sending 1 logs to telemetry. Data is {'logs': [{'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_imported_packages', 'value': "{'distro', 'weakref', 'textwrap', 'http', 'bz2', 'tarfile', 'os', 'ssl', 'toml', 'stringprep', 'linecache', 'hmac', 'token', 'errno', 'blinker', 'cryptography', 'colorama', 'asyncio', 'atexit', 'sre_parse', 'io', 'unittest', 'socket', 'zoneinfo', 'time', 'mimetypes', 'builtins', 'zlib', 'cachetools', 'pythoncom', 'heapq', 'pywintypes', 'selectors', 'charset_normalizer', 'pandas', 'multiprocessing', 'pkg_resources', 'tzlocal', 'attr', 'cmath', 'ctypes', 'ntpath', 'operator', 'streamlit', 'decimal', 'zipfile', 'contextvars', 'webbrowser', 'msvcrt', 'select', 'platformdirs', 'configparser', 'calendar', 'glob', 'inspect', 'timeit', 'html', 'ipaddress', 'mmap', 'numpy', 'plotly', 'jwt', 'git', 'base64', 'absl', 'tempfile', 'plistlib', 'dataclasses', 'json', 'colorsys', 'fnmatch', 'jiter', 'posixpath', 'tomlkit', 'lzma', 'warnings', 'logging', 'binascii', 'requests', 'genericpath', 'threading', 'locale', 'pathlib', 'importlib', 'runpy', 'asn1crypto', 'anyio', 're', 'urllib', 'stat', 'types', 'getpass', 'email', 'shlex', 'opcode', 'dateutil', 'math', 'random', 'argparse', 'abc', 'win32api', 'functools', 'sysconfig', 'bisect', 'signal', 'uu', 'nturl2path', 'datetime', 'getopt', 'rich', 'itertools', 'marshal', 'pyexpat', 'PIL', 'annotated_types', 'gitdb', 'hashlib', 'pydantic', 'pkgutil', 'typing', 'shutil', 'encodings', 'secrets', 'ast', 'xml', 'cloudpickle', 'codecs', 'sys', 'pickle', 'yaml', 'pywin32_system32', 'unicodedata', 'dis', 'reprlib', 'difflib', 'smmap', 'snowflake', 'pygments', 'pywin32_bootstrap', 'openai', 'fractions', 'certifi', 'copyreg', 'idna', 'pytz', 'csv', 'traceback', 'keyword', 'gc', 'gzip', 'google', 'win32com', 'winreg', 'typing_extensions', 'gettext', 'pydoc', 'click', 'subprocess', 'quopri', 'site', 'statistics', 'sortedcontainers', 'sniffio', 'filelock', 'string', 'collections', 'packaging', 'pprint', 'urllib3', 'pyarrow', 'six', 'numbers', 'tornado', 'zipimport', 'nt', 'watchdog', 'uuid', 'struct', 'enum', 'queue', 'contextlib', 'cython_runtime', 'sre_constants', 'concurrent', 'copy', 'public', 'pydantic_core', 'array', 'platform', 'tokenize', 'httpx', 'sre_compile', 'OpenSSL'}"}, 'timestamp': '1737248880004'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_session_created', 'data': {'start_time': 1737248880004, 'created_by_snowpark': 0}}, 'timestamp': '1737248880004'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 2596}}, 'timestamp': '1737248880004'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4d87-0007-08ea001fe7f6', 'value': 4605}, 'timestamp': '1737248880222'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4d87-0007-08ea001fe7fa', 'value': 4598}, 'timestamp': '1737248880333'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce23-0002-4d87-0007-08ea001fe7fa', 'value': 1}, 'timestamp': '1737248880334'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.sql', 'sql_simplifier_enabled': True, 'query_plan_height': 2, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': 'faa57dae-db6f-4235-ba62-6d826f8845fa', 'query_plan_complexity': {'column': 1}, 'thread_ident': 2596}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce23-0002-4d87-0007-08ea001fe7fa']}}, 'timestamp': '1737248880335'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4c76-0007-08ea001fc002', 'value': 4598}, 'timestamp': '1737248880418'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.07647514343261719, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737248880419'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4c70-0007-08ea002040da', 'value': 4597}, 'timestamp': '1737248880507'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.08782196044921875, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737248880508'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4c78-0007-08ea0020127a', 'value': 4597}, 'timestamp': '1737248880587'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.07796454429626465, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737248880587'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce23-0002-4c79-0007-08ea0020033e', 'value': 4602}, 'timestamp': '1737248880708'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce23-0002-4c79-0007-08ea0020033e', 'value': 1}, 'timestamp': '1737248880709'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': '00119ee4-7957-404c-8632-8a2d230f6150', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 2596}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce23-0002-4c79-0007-08ea0020033e']}}, 'timestamp': '1737248880709'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c79-0007-08ea00200416', 'value': 4604}, 'timestamp': '1737249853651'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 3792}}, 'timestamp': '1737249853656'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c7a-0007-08ea001ff8e6', 'value': 4602}, 'timestamp': '1737249853757'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_fetch_pandas_all', 'query_id': '01b9ce34-0002-4c7a-0007-08ea001ff8e6', 'value': 1}, 'timestamp': '1737249853758'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce34-0002-4c7a-0007-08ea001ff8e6', 'value': 7}, 'timestamp': '1737249853764'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_to_pandas', 'category': 'action', 'api_calls': [{'name': 'Session.sql', 'sql_simplifier_enabled': True, 'query_plan_height': 2, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': '432c730b-b15c-48d5-bcd3-7b83f37328a2', 'query_plan_complexity': {'column': 1}, 'thread_ident': 3792}, {'name': 'DataFrame.to_pandas'}], 'sfqids': ['01b9ce34-0002-4c7a-0007-08ea001ff8e6']}}, 'timestamp': '1737249853765'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c78-0007-08ea002013a2', 'value': 4601}, 'timestamp': '1737249853846'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.07412266731262207, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249853846'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c77-0007-08ea001fdf92', 'value': 4601}, 'timestamp': '1737249853968'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.12114381790161133, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249853968'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c7a-0007-08ea001ff8ea', 'value': 4601}, 'timestamp': '1737249854034'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.06427574157714844, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249854034'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c70-0007-08ea0020419e', 'value': 4602}, 'timestamp': '1737249854138'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce34-0002-4c70-0007-08ea0020419e', 'value': 1}, 'timestamp': '1737249854139'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': '5c0be1af-19d1-408d-8f4d-c32cc15801ab', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 3792}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce34-0002-4c70-0007-08ea0020419e']}}, 'timestamp': '1737249854139'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c71-0007-08ea0020234e', 'value': 4603}, 'timestamp': '1737249855591'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 20504}}, 'timestamp': '1737249855598'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c70-0007-08ea002041a2', 'value': 4606}, 'timestamp': '1737249855672'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.07549190521240234, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249855672'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c76-0007-08ea0020511e', 'value': 4601}, 'timestamp': '1737249855739'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.06629705429077148, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249855740'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4d87-0007-08ea001fe952', 'value': 4603}, 'timestamp': '1737249855802'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.06274843215942383, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249855802'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce34-0002-4c78-0007-08ea002013a6', 'value': 4602}, 'timestamp': '1737249855899'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce34-0002-4c78-0007-08ea002013a6', 'value': 1}, 'timestamp': '1737249855900'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': 'c1a54fb1-367a-4eac-8a3d-e96b8ca56cd7', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 20504}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce34-0002-4c78-0007-08ea002013a6']}}, 'timestamp': '1737249855900'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c5d-0007-08ea0020604e', 'value': 4601}, 'timestamp': '1737249942748'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 18828}}, 'timestamp': '1737249942757'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c78-0007-08ea002013ae', 'value': 4605}, 'timestamp': '1737249942856'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.10108375549316406, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249942857'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c7a-0007-08ea001ff8ee', 'value': 4610}, 'timestamp': '1737249942949'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.09112358093261719, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249942949'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c76-0007-08ea00205156', 'value': 4606}, 'timestamp': '1737249943027'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.07550787925720215, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249943027'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c7a-0007-08ea001ff8f2', 'value': 4602}, 'timestamp': '1737249943123'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce35-0002-4c7a-0007-08ea001ff8f2', 'value': 0}, 'timestamp': '1737249943123'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': 'f1836354-1234-4077-8324-62f7fbfd26ca', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 18828}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce35-0002-4c7a-0007-08ea001ff8f2']}}, 'timestamp': '1737249943124'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c77-0007-08ea001fdfa2', 'value': 4603}, 'timestamp': '1737249944004'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 5232}}, 'timestamp': '1737249944009'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c79-0007-08ea00200426', 'value': 4602}, 'timestamp': '1737249944080'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.07233881950378418, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249944080'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c77-0007-08ea001fdfa6', 'value': 4602}, 'timestamp': '1737249944148'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.06730175018310547, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249944149'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c70-0007-08ea002041ae', 'value': 4602}, 'timestamp': '1737249944221'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.07213187217712402, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249944222'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce35-0002-4c78-0007-08ea002013b2', 'value': 4603}, 'timestamp': '1737249944365'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce35-0002-4c78-0007-08ea002013b2', 'value': 0}, 'timestamp': '1737249944365'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': 'db586512-410c-4ff1-bbf1-cd1161a37801', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 5232}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce35-0002-4c78-0007-08ea002013b2']}}, 'timestamp': '1737249944366'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c71-0007-08ea00202366', 'value': 4619}, 'timestamp': '1737249984600'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 27024}}, 'timestamp': '1737249984604'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c79-0007-08ea00200432', 'value': 4627}, 'timestamp': '1737249984742'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce36-0002-4c79-0007-08ea00200432', 'value': 1}, 'timestamp': '1737249984743'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.sql', 'sql_simplifier_enabled': True, 'query_plan_height': 2, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': '85bb69f5-aeee-42e4-9d9b-bf192d044896', 'query_plan_complexity': {'column': 1}, 'thread_ident': 27024}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce36-0002-4c79-0007-08ea00200432']}}, 'timestamp': '1737249984743'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c5d-0007-08ea0020605e', 'value': 4603}, 'timestamp': '1737249984815'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT  *  FROM DOCS_CHUNKS_TABLE', 'e2e_time': 0.06650805473327637, 'stack_trace': ["categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', 'return self._with_plan(self._select_statement.select(names), _ast_stmt=stmt)', 'new_column_states = derive_column_states_from_subquery(cols, self)', 'from_c_state = from_.column_states.get(quoted_c_name)', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249984815'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c5d-0007-08ea00206062', 'value': 4602}, 'timestamp': '1737249984883'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)', 'e2e_time': 0.0674448013305664, 'stack_trace': ['main()', 'config_options()', "categories = session.table('DOCS_CHUNKS_TABLE').select('PRODUCTNAME').distinct().order_by('PRODUCTNAME').collect()", 'r = func(*args, **kwargs)', 'return func(*args, **kwargs)', '[self.col(quote_name(f.name), _emit_ast=False) for f in self.schema.fields],', 'val = self.func(instance)', 'return StructType._from_attributes(self._plan.attributes)', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249984883'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c78-0007-08ea002013ba', 'value': 4601}, 'timestamp': '1737249984961'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_describe_query_details', 'data': {'session_id': 1980125954395262, 'sql_text': ' SELECT "PRODUCTNAME" FROM ( SELECT "PRODUCTNAME" FROM ( SELECT  *  FROM DOCS_CHUNKS_TABLE)) GROUP BY "PRODUCTNAME"', 'e2e_time': 0.07757711410522461, 'stack_trace': ['exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'exprs = [convert(col) for col in parse_positional_args_to_list(*cols)]', 'return self._resolve(col)', 'lambda attr: quote_name(attr.name) == normalized_col_name, self._output', 'val = self.func(instance)', 'self._select_statement.column_states.projection', 'self.column_states = self.from_.column_states', 'column_attrs = self.snowflake_plan.attributes', 'attributes = analyze_attributes(self.schema_query, self.session)']}}, 'timestamp': '1737249984962'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce36-0002-4c76-0007-08ea0020515a', 'value': 4602}, 'timestamp': '1737249985079'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce36-0002-4c76-0007-08ea0020515a', 'value': 1}, 'timestamp': '1737249985080'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_function_usage', 'data': {'func_name': 'action_collect', 'category': 'action', 'api_calls': [{'name': 'Session.table', 'sql_simplifier_enabled': True, 'query_plan_height': 4, 'query_plan_num_selects_with_complexity_merged': 0, 'query_plan_num_duplicate_nodes': 0, 'query_plan_duplicated_node_complexity_distribution': [0, 0, 0, 0, 0, 0, 0], 'plan_uuid': '578baeef-8185-4aeb-9a24-b7c66602070c', 'query_plan_complexity': {'others': 1, 'column': 5, 'order_by': 1, 'group_by': 1}, 'thread_ident': 27024}, {'name': 'DataFrame.select'}, {'name': 'DataFrame.distinct', 'subcalls': [{'name': 'DataFrame.group_by'}, {'name': 'RelationalGroupedDataFrame.agg'}]}, {'name': 'DataFrame.sort'}, {'name': 'DataFrame.collect'}], 'sfqids': ['01b9ce36-0002-4c76-0007-08ea0020515a']}}, 'timestamp': '1737249985080'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_cursor_created', 'data': {'session_id': 1980125954395262, 'thread_ident': 32572}}, 'timestamp': '1737250547623'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_first_result', 'query_id': '01b9ce3f-0002-4c72-0007-08ea002032b2', 'value': 4604}, 'timestamp': '1737250548178'}, {'message': {'driver_type': 'PythonConnector', 'driver_version': '3.12.4', 'source': 'streamlit', 'type': 'client_time_consume_last_result', 'query_id': '01b9ce3f-0002-4c72-0007-08ea002032b2', 'value': 1}, 'timestamp': '1737250548179'}, {'message': {'source': 'PythonSnowpark', 'version': '1.26.0', 'python_version': '3.10.11', 'operating_system': 'Windows', 'type': 'snowpark_temp_table_cleanup', 'data': {'session_id': 1980125954395262, 'temp_table_cleaner_enabled': False, 'num_temp_tables_cleaned': 0, 'num_temp_tables_created': 0}}, 'timestamp': '1737250548179'}]}.
+2025-01-18 19:35:48,187 - DEBUG - Opentelemtry otel injection failed
+Traceback (most recent call last):
+  File "D:\Personal\Data Science\LLM RAG\Streamlit\streamlit-env\lib\site-packages\snowflake\connector\network.py", line 487, in request
+    from opentelemetry.trace.propagation.tracecontext import (
+ModuleNotFoundError: No module named 'opentelemetry'
+2025-01-18 19:35:48,188 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:35:48,188 - DEBUG - remaining request timeout: 5000 ms, retry cnt: 1
+2025-01-18 19:35:48,188 - DEBUG - Request guid: 088b418f-a75d-4efe-b9c9-fcf53b07feb0
+2025-01-18 19:35:48,188 - DEBUG - socket timeout: 60
+2025-01-18 19:35:48,252 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /telemetry/send?request_guid=088b418f-a75d-4efe-b9c9-fcf53b07feb0 HTTP/1.1" 200 86
+2025-01-18 19:35:48,253 - DEBUG - SUCCESS
+2025-01-18 19:35:48,253 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:35:48,253 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:35:48,254 - DEBUG - Successfully uploading metrics to telemetry.
+2025-01-18 19:35:48,254 - INFO - No async queries seem to be running, deleting session
+2025-01-18 19:35:48,254 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 1/1 active sessions
+2025-01-18 19:35:48,254 - DEBUG - remaining request timeout: 5000 ms, retry cnt: 1
+2025-01-18 19:35:48,254 - DEBUG - Request guid: bbbe8439-dbf8-450e-9ef5-33e6e1a3fb3d
+2025-01-18 19:35:48,254 - DEBUG - socket timeout: 60
+2025-01-18 19:35:48,337 - DEBUG - https://gmcpdcz-mt01740.snowflakecomputing.com:443 "POST /session?delete=true&request_guid=bbbe8439-dbf8-450e-9ef5-33e6e1a3fb3d HTTP/1.1" 200 76
+2025-01-18 19:35:48,337 - DEBUG - SUCCESS
+2025-01-18 19:35:48,338 - DEBUG - Session status for SessionPool 'gmcpdcz-mt01740.snowflakecomputing.com', SessionPool 0/1 active sessions
+2025-01-18 19:35:48,338 - DEBUG - ret[code] = None, after post request
+2025-01-18 19:35:48,339 - DEBUG - clear_cache() called
+2025-01-18 19:35:48,339 - DEBUG - Session is closed
+2025-01-18 19:35:48,339 - INFO - Closed session: 1980125954395262

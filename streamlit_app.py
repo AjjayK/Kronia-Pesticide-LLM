@@ -134,7 +134,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
-    st.sidebar.text("Enter your preference")
+    st.sidebar.header("Enter your Location")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
