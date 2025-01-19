@@ -25,6 +25,12 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 #set up page
 st.set_page_config(page_title="Kronia", page_icon="🌾", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
+
+
+db_env = st.secrets["environment"]
+ingest_db = f"{db_env}_SRC_INGEST"
+app_db = f"{db_env}_DP_APP"
+
 # Create Snowflake session
 connection_parameters = {
    "account": st.secrets["account"],
@@ -35,21 +41,14 @@ connection_parameters = {
    "schema": st.secrets["schema"]           
 }
 
-db_env = st.secrets["environment"]
-ingest_db = f"{db_env}_src_ingest"
-app_db = f"{db_env}_dp_app"
-
-# create from a Snowflake Connection
-#connection = connect(**connection_parameters)
-#root = Root(connection)
-# or create from a Snowpark Session
 @st.cache_resource
 def get_snowflake_session():
-    return (
-        Session.builder
-        .configs(connection_parameters)
-        .create()
-    )
+    # return (
+    #     Session.builder
+    #     .configs(connection_parameters)
+    #     .create()
+    # )
+    return st.connection("snowflake").session()
 
 # Get the session only once and reuse it
 session = get_snowflake_session()
@@ -86,7 +85,7 @@ def search_locations(search_term = ''):
     if not search_term:
         # If no search term, return limited initial results
         load_sql = f"""
-        SELECT LOCATION, LATITUDE, LONGITUDE 
+        SELECT DISTINCT LOCATION, LATITUDE, LONGITUDE 
         FROM {app_db}.MODELED.US_ADDRESS_LIST 
         LIMIT 200
         """
@@ -101,8 +100,8 @@ def search_locations(search_term = ''):
     
     try:
         result = session.sql(load_sql).to_pandas()
-        location_list = result['LOCATION'].to_list()
-        return result['LOCATION'].to_list(), result  # Add empty option at start
+        location_list = list(set(result['LOCATION'].to_list()))
+        return location_list, result  # Add empty option at start
     except Exception as e:
         st.error(f"Error fetching locations: {str(e)}")
         return [""]
@@ -135,6 +134,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
+    st.sidebar.text("Enter your preference")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
@@ -305,7 +305,7 @@ def create_prompt (myquestion):
            You can utilize the information contained from the IMAGE ANALYSIS provided
            between <image_analysis> and </image_analysis> tags.
 
-            You can utilize the weather information contained within
+            You can utilize the weather information contained for location ({st.session_state.user_location}) within
            between <weather_forecast> and </weather_forecast> tags if needed. The weather information is in imperial units.
 
            You offer a chat experience considering the information included in the CHAT HISTORY
@@ -390,7 +390,7 @@ def analyze_image(image_bytes, prompt):
         return response.choices[0].message.content
     except Exception as e:
         return f"Error analyzing image: {str(e)}"
-        
+
 def get_weather_forecast(include_categories):
     open_weather_api_key = st.secrets["open_weather_api_key"]
 
@@ -458,7 +458,7 @@ def need_weather(myquestion):
     with st.spinner('Checking if need weather...'):
         need_weather = Complete(st.session_state.model_name, need_weather_system_prompt)
     
-    print(need_weather)
+
 
     if need_weather.strip() == "Yes":
         labels = """
@@ -495,9 +495,7 @@ def need_weather(myquestion):
 
         with st.spinner('Getting weather categories...'):
             include_categories = Complete(st.session_state.model_name, weather_category_system_prompt)
-        print(include_categories)
         st.session_state.weather_forecast = get_weather_forecast(include_categories)
-        print(st.session_state.weather_forecast)
 
 def create_structure():
     st.markdown(
