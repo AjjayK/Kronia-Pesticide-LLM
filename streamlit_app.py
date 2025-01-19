@@ -16,6 +16,8 @@ from openai import OpenAI
 import logging
 import time
 from datetime import datetime
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.backends import default_backend
 pd.set_option("max_colwidth",None)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -31,6 +33,14 @@ db_env = st.secrets["environment"]
 ingest_db = f"{db_env}_SRC_INGEST"
 app_db = f"{db_env}_DP_APP"
 
+p_key_str = st.secrets["private_key_file"]
+p_key_bytes = p_key_str.encode('utf-8')
+p_key = serialization.load_pem_private_key(
+            p_key_bytes,
+            password=None, 
+            backend=default_backend()
+        )
+
 # Create Snowflake session
 connection_parameters = {
    "account": st.secrets["account"],
@@ -38,17 +48,18 @@ connection_parameters = {
    "password": st.secrets["password"],
    "database": st.secrets["database"], 
    "warehouse": st.secrets["warehouse"],
-   "schema": st.secrets["schema"]           
+   "schema": st.secrets["schema"],
+   "private_key": p_key          
 }
 
 @st.cache_resource
 def get_snowflake_session():
-    # return (
-    #     Session.builder
-    #     .configs(connection_parameters)
-    #     .create()
-    # )
-    return st.connection("snowflake").session()
+    return (
+        Session.builder
+        .configs(connection_parameters)
+        .create()
+    )
+    #return st.connection("snowflake").session()
 
 # Get the session only once and reuse it
 session = get_snowflake_session()
