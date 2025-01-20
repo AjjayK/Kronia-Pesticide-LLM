@@ -2,3 +2,5 @@
 *.ipynb
 streamlit-env/
 .temp/
+playground.py
+*.log
