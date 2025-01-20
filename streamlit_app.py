@@ -123,7 +123,7 @@ def show_settings():
     if 'show_settings' not in st.session_state:
         st.session_state.show_settings = False
     if 'user_location' not in st.session_state:
-        user_id = st.session_state.get('user_id', 'default_user') 
+        user_id = st.experimental_user.email if st.experimental_user.email else "default_user"
         load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE
         FROM {app_db}.APP_ASSETS.USER_SETTINGS 
