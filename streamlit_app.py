@@ -306,7 +306,10 @@ def summarize_question_with_history(chat_history, question):
             </site_in_scope>
             """
 
-        prompt = f"{extra_details}{base_prompt}"
+        prompt = f"{base_prompt}{extra_details}"
+    
+    if st.session_state.image_analysis is not None:
+        prompt = f"{prompt} <image_analysis> {st.session_state.image_analysis} </image_analysis>"
     
     summary = Complete(st.session_state.model_name, prompt)   
 
@@ -501,16 +504,16 @@ def need_weather(myquestion):
     st.session_state.weather_forecast = None
 
     need_weather_system_prompt = f"""
-    Analyze the text/question within the tag <weather_forecast> and </weather_forecast>. Reply if the question has time/day related context.
+    Analyze the text/question within the tag <question> and </question>. Does this question expects a current or future time/day/weather related context?
     If the question has or expects time/days related context, reply with "Yes" otherwise reply with "No".
     
-    <weather_forecast>
+    <question>
     {myquestion}
-    </weather_forecast>
+    </question>
     """
     with st.spinner('Checking if need weather...'):
         need_weather = Complete(st.session_state.model_name, need_weather_system_prompt)
-    
+        print(need_weather)
 
 
     if need_weather.strip() == "Yes":
@@ -548,6 +551,7 @@ def need_weather(myquestion):
 
         with st.spinner('Getting weather categories...'):
             include_categories = Complete(st.session_state.model_name, weather_category_system_prompt)
+            print(include_categories)
         st.session_state.weather_forecast = get_weather_forecast(include_categories)
 
 def create_structure():
@@ -615,7 +619,7 @@ def create_structure():
         
         <div class="title-container">
             <h1 class="main-title">🌾 Kronia</h1>
-            <h4 class="subtitle">💬 Chat with Pesticide Products Label Documents</h4>
+            <h3 class="subtitle">💬 Your AI Powered Pocket Agronomist for Pesticides</h3>
         </div>
 
         <div class="footer">
@@ -626,6 +630,22 @@ def create_structure():
         """,
         unsafe_allow_html=True
     )
+
+def close_snowflake_session():
+    try:
+        # Get the resource key that Streamlit uses for the cached session
+        resource_key = tuple(sorted(connection_parameters.items()))
+        
+        # Clear the cached session from st.cache_resource
+        st.cache_resource.clear()
+        
+        # If we have a reference to the session, close it
+        if 'session' in globals():
+            session.close()
+        
+        st.success("Snowflake session closed successfully")
+    except Exception as e:
+        st.error(f"Error closing Snowflake session: {str(e)}")
 
 def main():
 

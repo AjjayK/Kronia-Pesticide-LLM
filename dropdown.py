@@ -17,20 +17,24 @@ def add_all_option(series):
 def get_product_list(session, app_db):
 
     data_df = get_dropdown_data(session, app_db)
-
-    selected_pest = st.sidebar.selectbox('Select the pest on your site', add_all_option(data_df['PEST']), index=0)
+    pest_options = pd.Series(sorted(data_df['PEST'].unique()))
+    selected_pest = st.sidebar.selectbox('Select the pest on your site', add_all_option(pest_options), index=0)
     if selected_pest == 'ALL':
         filtered_data_by_pest = data_df
     else:
         filtered_data_by_pest = data_df[data_df['PEST'] == selected_pest]
 
-    selected_site = st.sidebar.selectbox('Select your site', add_all_option(filtered_data_by_pest['SITE']), index=0)
+
+    site_options = pd.Series(sorted(filtered_data_by_pest['SITE'].unique()))
+    selected_site = st.sidebar.selectbox('Select your site', add_all_option(site_options), index=0)
     if selected_site == 'ALL':
         filtered_data_by_site = filtered_data_by_pest
     else:
         filtered_data_by_site = filtered_data_by_pest[filtered_data_by_pest['SITE'] == selected_site]
 
-    selected_product = st.sidebar.selectbox('Select a product of interest', add_all_option(filtered_data_by_site['PRODUCTNAME']), index=0)
+
+    product_options = pd.Series(sorted(filtered_data_by_site['PRODUCTNAME'].unique()))
+    selected_product = st.sidebar.selectbox('Select a product of interest', add_all_option(product_options), index=0)
     if selected_product == 'ALL':
         filtered_data_by_product = filtered_data_by_site
     else:
