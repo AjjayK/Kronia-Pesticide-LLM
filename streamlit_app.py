@@ -145,7 +145,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
-    st.sidebar.title("Enter your Location")
+    st.sidebar.title("Personalization")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
@@ -156,7 +156,7 @@ def show_settings():
 
     # Show settings when enabled
     if st.session_state.show_settings:
-        with st.sidebar.expander("Settings", expanded=True):
+        with st.sidebar.expander("To get Weather-Based Pesticide Application Insights", expanded=True):
             # Location input
             query = st.text_input("Type location to filter dropdown", value=st.session_state.user_location)
             locations, location_df = search_locations(query)
@@ -199,7 +199,7 @@ def image_workflow():
     if st.session_state.uploaded_file is not None and st.session_state.image_analysis is None:
         # Display the uploaded image
         image = Image.open(st.session_state.uploaded_file)
-        st.sidebar.image(image, caption="Uploaded Image", use_column_width=True)
+        st.sidebar.image(image, caption="Uploaded Image", use_container_width =True)
         with st.spinner("Analyzing image..."):
             # Get image bytes
             img_bytes = st.session_state.uploaded_file.getvalue()
@@ -213,6 +213,7 @@ def image_workflow():
             st.session_state.image_analysis = analysis
     if st.session_state.uploaded_file is None:
         st.session_state.image_analysis = None
+
      
 def config_options():
 
@@ -228,15 +229,14 @@ def config_options():
         st.session_state.pest = filtered_product_db['PEST'].unique().tolist()
         st.session_state.site = filtered_product_db['SITE'].unique().tolist()
             
-    #st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
-
     uploaded_file = st.sidebar.file_uploader("Or upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
     image_workflow()
+    #st.sidebar.expander("Session State").write(st.session_state)
     st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
-    st.sidebar.expander("Session State").write(st.session_state)
+
+
 
 def init_messages():
-    
    # Initialize chat history
     if st.session_state.start_over or "messages" not in st.session_state:
         st.session_state.messages = []
