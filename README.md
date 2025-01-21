@@ -31,30 +31,30 @@ It is extremely difficult for a human to solve this problem efficiently at scale
 Some of the questions that can be asked to Kronia are:
 
 ### General Questions
-- Active Ingredient
-- Dosage
-- Target Crop/Plant
-- Target Pest
-- PPE Needed
-- Environmental Hazards
-- Mode of Action
+   * **Active Ingredient Information**: Get information about the active ingredients in specific pesticides.
+   * **Dosage Requirements**: Learn about proper application rates and concentrations for specific situations.
+   * **Target Crop/Plant Compatibility**: Understand which products are safe and effective for your specific crops or plants.
+   * **Target Pest Identification**: Get information about which products are effective against specific pests.
+   * **PPE Requirements**: Learn about the necessary Personal Protective Equipment for safe application.
+   * **Environmental Hazard Assessment**: Understand potential environmental impacts and necessary precautions.
+   * **Mode of Action Details**: Learn how specific pesticides work to control pests.
 
-### Specific Questions on Label Documents
-- Can I use `<pesticide product>` on my `<crop/plant>`?
-- When should I reapply `<pesticide product>`?
-- How should I store this pesticide safely?
-- What are the first aid instructions in case of exposure?
-- Can I mix this pesticide with [another pesticide or fertilizer]?
-- What are the buffer zone requirements for this pesticide?
+## Specific Questions on Label Documents
+   * **Usage Compatibility**: "Can I use [pesticide product] on my [crop/plant]?"
+   * **Reapplication Timing**: "When should I reapply [pesticide product]?"
+   * **Storage Guidelines**: "How should I store this pesticide safely?"
+   * **Safety Protocols**: "What are the first aid instructions in case of exposure?"
+   * **Mixture Compatibility**: "Can I mix this pesticide with [another pesticide or fertilizer]?"
+   * **Buffer Zone Compliance**: "What are the buffer zone requirements for this pesticide?"
 
-### Weather-Specific Questions
-- Is the weather today or tomorrow or in the next few days suitable for application?
-- Which day has good weather for pesticide efficacy?
-- Based on the weather forecast, give me storage recommendations for `<pesticide product>`.
+   ## Weather-Specific Questions
+   * **Current Application Conditions**: "Is the weather today suitable for application?"
+   * **Future Application Planning**: "Which day in the next few days has good weather for pesticide efficacy?"
+   * **Storage Recommendations**: "Based on the weather forecast, give me storage recommendations for [pesticide product]."
 
-### Image Context
-- Suggest me a pesticide product for the infection in the image.
-- Is this crop affected by `<specific disease / pest>`?
+   ## Image Context Questions
+   * **Product Recommendations**: "Suggest me a pesticide product for the infection in the image."
+   * **Disease/Pest Identification**: "Is this crop affected by [specific disease/pest]?"
 
 ---
 

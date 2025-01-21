@@ -6,7 +6,7 @@ from snowflake.core import Root
 import requests
 from snowflake.cortex import Complete
 from snowflake.core import Root
-from dropdown import get_product_list
+from components.dropdown import get_product_list
 import pandas as pd
 import json
 from PIL import Image
@@ -18,6 +18,7 @@ import time
 from datetime import datetime
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.backends import default_backend
+from pathlib import Path
 pd.set_option("max_colwidth",None)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -92,6 +93,21 @@ COLUMNS = [
 
 svc = root.databases[CORTEX_SEARCH_DATABASE].schemas[CORTEX_SEARCH_SCHEMA].cortex_search_services[CORTEX_SEARCH_SERVICE]
 
+def load_help_content():
+    help_file_path = Path(__file__).parent / 'components' / 'help_content.md'
+    with open(help_file_path, 'r') as file:
+        return file.read()
+
+@st.dialog("Help Page", width="large")
+def help_dialog():
+    st.write(load_help_content())
+
+def show_help():
+    st.sidebar.title("Get Help")
+    if st.sidebar.button("ℹ️ Read me"):
+        help_dialog()
+
+
 def search_locations(search_term = ''):
     if not search_term:
         # If no search term, return limited initial results
@@ -124,6 +140,7 @@ def show_settings():
         st.session_state.show_settings = False
     if 'user_location' not in st.session_state:
         user_id = st.experimental_user.email if st.experimental_user.email else "default_user"
+        st.session_state.user_id = user_id
         load_sql = f"""
         SELECT LOCATION, LATITUDE, LONGITUDE
         FROM {app_db}.APP_ASSETS.USER_SETTINGS 
@@ -145,7 +162,7 @@ def show_settings():
         st.session_state.show_settings = not st.session_state.show_settings
 
     # Create settings button in the sidebar
-    st.sidebar.title("Enter your Location")
+    st.sidebar.title("Personalization")
     st.sidebar.button("⚙️ Settings", on_click=toggle_settings)
 
     # Auto-hide logic
@@ -156,7 +173,7 @@ def show_settings():
 
     # Show settings when enabled
     if st.session_state.show_settings:
-        with st.sidebar.expander("Settings", expanded=True):
+        with st.sidebar.expander("To get Weather-Based Pesticide Application Insights", expanded=True):
             # Location input
             query = st.text_input("Type location to filter dropdown", value=st.session_state.user_location)
             locations, location_df = search_locations(query)
@@ -199,7 +216,7 @@ def image_workflow():
     if st.session_state.uploaded_file is not None and st.session_state.image_analysis is None:
         # Display the uploaded image
         image = Image.open(st.session_state.uploaded_file)
-        st.sidebar.image(image, caption="Uploaded Image", use_column_width=True)
+        st.sidebar.image(image, caption="Uploaded Image", use_container_width =True)
         with st.spinner("Analyzing image..."):
             # Get image bytes
             img_bytes = st.session_state.uploaded_file.getvalue()
@@ -213,10 +230,13 @@ def image_workflow():
             st.session_state.image_analysis = analysis
     if st.session_state.uploaded_file is None:
         st.session_state.image_analysis = None
-     
-def config_options():
 
-    st.sidebar.title("Select Options")
+@st.dialog("To Start Over", width="large")
+def show_reset():
+    st.write("Click on the **three dots** in the top-right corner of the page and select **Rerun** from the dropdown menu.")
+
+def config_options():
+    st.sidebar.title("Looking for Something Specific?")
     filtered_product_db = get_product_list(session, app_db)
 
     if isinstance(filtered_product_db, str) and filtered_product_db == "ALL":
@@ -228,18 +248,20 @@ def config_options():
         st.session_state.pest = filtered_product_db['PEST'].unique().tolist()
         st.session_state.site = filtered_product_db['SITE'].unique().tolist()
             
-    #st.sidebar.selectbox('Select what products you are looking for', cat_list, key = "category_value")
-
     uploaded_file = st.sidebar.file_uploader("Or upload an image with crop pest damage...", type=["jpg", "jpeg", "png"], key="uploaded_file")
     image_workflow()
-    st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
-    st.sidebar.expander("Session State").write(st.session_state)
+    #st.sidebar.expander("Session State").write(st.session_state)
+    #st.sidebar.button("Start Over", on_click=init_messages, key="start_over")
+    if st.sidebar.button("Want to Reset Chat?"):
+        show_reset()
 
-def init_messages():
-    
-   # Initialize chat history
-    if st.session_state.start_over or "messages" not in st.session_state:
-        st.session_state.messages = []
+
+
+#def init_messages():
+#    # Initialize chat history
+#     if st.session_state.start_over or "messages" not in st.session_state:
+#         st.session_state.messages = []
+
 
 def get_similar_chunks_search_service(query):
 
@@ -256,11 +278,11 @@ def get_similar_chunks_search_service(query):
             filter_obj = {"@eq": {"PRODUCTNAME": st.session_state.product_list[0]}}
         else:
             filter_obj = {"@or": eq_conditions}
-            print(eq_conditions)
+            #print(eq_conditions)
         #filter_obj = {"@contains": {"PRODUCTNAME": st.session_state.product_list }}
         response = svc.search(query, COLUMNS, filter=filter_obj, limit=NUM_CHUNKS)
 
-    st.sidebar.json(response.json())
+    #st.sidebar.json(response.json())
     
     return response.json()  
 
@@ -313,8 +335,8 @@ def summarize_question_with_history(chat_history, question):
     
     summary = Complete(st.session_state.model_name, prompt)   
 
-    st.sidebar.text("Summary to be used to find similar chunks in the docs:")
-    st.sidebar.caption(summary)
+    #st.sidebar.text("Summary to be used to find similar chunks in the docs:")
+    #st.sidebar.caption(summary)
 
     summary = summary.replace("'", "")
 
@@ -328,7 +350,6 @@ def create_prompt (myquestion):
     else:
         question_with_image = myquestion
     chat_history = get_chat_history()
-
     if chat_history != []: #There is chat_history, so not first question
         question_summary = summarize_question_with_history(chat_history, question_with_image)
         prompt_context =  get_similar_chunks_search_service(question_summary)
@@ -513,7 +534,6 @@ def need_weather(myquestion):
     """
     with st.spinner('Checking if need weather...'):
         need_weather = Complete(st.session_state.model_name, need_weather_system_prompt)
-        print(need_weather)
 
 
     if need_weather.strip() == "Yes":
@@ -551,7 +571,6 @@ def need_weather(myquestion):
 
         with st.spinner('Getting weather categories...'):
             include_categories = Complete(st.session_state.model_name, weather_category_system_prompt)
-            print(include_categories)
         st.session_state.weather_forecast = get_weather_forecast(include_categories)
 
 def create_structure():
@@ -651,9 +670,13 @@ def main():
 
     create_structure()
     st.session_state.model_name = 'mistral-large2'
+    show_help()
     show_settings()
     config_options()
-    init_messages()
+    if st.session_state.get("messages") is None:
+        st.session_state.messages = []
+    #init_messages()
+
     # Display chat messages from history on app rerun
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
